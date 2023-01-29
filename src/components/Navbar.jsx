@@ -664,7 +664,9 @@ function Navbar() {
                 ? `text-sm md:text-base mr-4 mt-4  ${
                     darkMode ? "text-[#ffffff]" : "text-[#ffffff]"
                   } `
-                : path === "/project/desktop"
+                : path === "/project/desktop" ||
+                path === "/project/website" ||
+                path === "/project/mobile"
                 ? `text-sm md:text-base mr-4 mt-4  ${
                     darkMode ? "text-[#ffffff]" : "text-[#ffffff]"
                   } `
