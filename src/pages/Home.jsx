@@ -851,13 +851,14 @@ function Home() {
                   </div>
 
                   <h1 className="text-[0.5rem] whitespace-nowrap">
-                    riandikas.rs@gmail.com
+                    riandikasp@gmail.com
                   </h1>
                 </div>
               </div>
             </div>
 
             <div
+              onClick={()=> openInNewTab('https://www.linkedin.com/in/riandikast/')}
               data-aos="fade-up"
               className={` mb-5  ${
                 darkMode
@@ -867,7 +868,7 @@ function Home() {
             >
               <div className="flex flex-row">
                 <a
-                  href="https://www.linkedin.com/in/riandikast/"
+               
                   className="flex flex-col text-[2.2rem] mr-2  "
                 >
                   {" "}
@@ -906,6 +907,7 @@ function Home() {
             </div>
 
             <div
+              onClick={()=> openInNewTab('https://github.com/riandikast')}
               data-aos="fade-up"
               className={` mb-40  ${
                 darkMode
@@ -915,7 +917,7 @@ function Home() {
             >
               <div className="flex flex-row">
                 <a
-                  href="https://www.linkedin.com/in/riandikast/"
+              
                   className="flex flex-col text-[2.2rem] mr-2"
                 >
                   {" "}
