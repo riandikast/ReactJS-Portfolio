@@ -50,7 +50,10 @@ function Home() {
 
   const scrollPosition = useScrollPosition();
   console.log("a", scrollPosition);
-
+  const openInNewTab = (url) => {
+    const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
+    if (newWindow) newWindow.opener = null
+  }
   const typeWriterLoop = () => {
     if (scrollPosition > 205 && scrollPosition <= 680) {
       return 0;
@@ -416,8 +419,9 @@ function Home() {
             Contact
           </div>
 
-          <div className="flex flex-col mx-auto">
+          <div className="flex flex-col mx-auto" >
             <div
+             
               data-aos="fade-up"
               className={` mb-5  ${
                 darkMode
@@ -427,7 +431,9 @@ function Home() {
             >
               <div className="flex flex-row">
                 <a
-                  href="https://www.linkedin.com/in/riandikast/"
+            
+
+                 
                   className="flex flex-col text-[3rem]  mr-1"
                 >
                   {" "}
@@ -464,6 +470,7 @@ function Home() {
             </div>
 
             <div
+              onClick={()=> openInNewTab('https://www.linkedin.com/in/riandikast/')}
               data-aos="fade-up"
               className={` mb-5  ${
                 darkMode
@@ -473,7 +480,7 @@ function Home() {
             >
               <div className="flex flex-row">
                 <a
-                  href="https://www.linkedin.com/in/riandikast/"
+            
                   className="flex flex-col text-[3rem] mr-1 "
                 >
                   {" "}
@@ -512,6 +519,7 @@ function Home() {
             </div>
 
             <div
+              onClick={()=> openInNewTab('https://github.com/riandikast')}
               data-aos="fade-up"
               className={` mb-40  ${
                 darkMode
@@ -521,7 +529,6 @@ function Home() {
             >
               <div className="flex flex-row">
                 <a
-                  href="https://github.com/riandikast"
                   className="flex flex-col text-[3rem] mr-1"
                 >
                   {" "}

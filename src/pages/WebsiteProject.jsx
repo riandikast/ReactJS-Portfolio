@@ -228,7 +228,7 @@ function WebsiteProject() {
           >
         
             <Carousel.Item>
-              <div className="flex flex-col px-3 mt-48  mx-auto w-[12rem] ">
+              <div className="flex flex-col px-3 mt-48  mx-auto w-[16rem] ">
                 <div>
                   <img
                   
@@ -255,7 +255,7 @@ function WebsiteProject() {
             </Carousel.Item>
 
             <Carousel.Item>
-              <div className="flex flex-col px-3 mt-48  mx-auto w-[12rem] ">
+              <div className="flex flex-col px-3 mt-48  mx-auto w-[16rem] ">
                 <div>
                   <img
                   
@@ -282,7 +282,7 @@ function WebsiteProject() {
             </Carousel.Item>
 
             <Carousel.Item>
-              <div className="flex flex-col px-3 mt-48  mx-auto w-[10rem] ">
+              <div className="flex flex-col px-3 mt-48  mx-auto w-[15rem] ">
                 <div>
                   <img
                   
@@ -309,7 +309,7 @@ function WebsiteProject() {
             </Carousel.Item>
 
             <Carousel.Item>
-              <div className="flex flex-col px-3 mt-48  mx-auto w-[11rem] ">
+              <div className="flex flex-col px-3 mt-48  mx-auto w-[15rem] ">
                 <div>
                   <img
                   
@@ -336,7 +336,7 @@ function WebsiteProject() {
             </Carousel.Item>
            
             <Carousel.Item>
-              <div className="flex flex-col px-3 mt-48  mx-auto w-[11rem] ">
+              <div className="flex flex-col px-3 mt-48  mx-auto w-[15rem] ">
                 <div>
                   <img
                   
@@ -403,7 +403,7 @@ function WebsiteProject() {
         variants={pageVariants}
       >
         <div
-          className={`flex flex-col mb-2 mx-auto w-5/6 z-0 text-[1.2rem] mt-2 text-[1rem] min501:text-[1.2rem] ${
+          className={`flex flex-col mb-2 mx-auto w-5/6 z-0 text-[1.2rem] mt-28 min501:mt-4 text-[1rem] min501:text-[1.2rem] ${
             darkMode ? "text-white" : "text-[#405189]"
           }`}
         >

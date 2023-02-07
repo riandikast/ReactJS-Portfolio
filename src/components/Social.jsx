@@ -6,10 +6,15 @@ import { themeState } from "./Navbar";
 
 function Social({size}) {
   const [darkMode, setDarkMode] = useAtom(themeState);
+  const openInNewTab = (url) => {
+    const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
+    if (newWindow) newWindow.opener = null
+  }
   return (
     <>
       <div className={` text-white font-google ${size}  font-semibold   space-x-1`}>
-        <a target="_blank" href="https://www.linkedin.com/in/riandikast/">
+       
+        <a onClick={()=> openInNewTab('https://www.linkedin.com/in/riandikast/')}>
           {" "}
           {darkMode ? (
               <i className="bx bxl-linkedin-square"></i>
@@ -18,8 +23,10 @@ function Social({size}) {
           )}
      
         </a>
+      
+    
 
-        <a target="_blank" href="https://github.com/riandikast">
+        <a onClick={()=> openInNewTab('https://github.com/riandikast')}>
           {" "}
           {darkMode ? (
             <i className={"bx bxl-github"}></i>

@@ -192,7 +192,7 @@ function Certification() {
               autoplay={6000}
             >
               <Carousel.Item>
-                <div className="flex flex-col py-2 mx-auto w-[10rem]  ">
+                <div className="flex flex-col py-2 mx-auto w-[15rem]  ">
                   <div>
                     <img
                     
@@ -203,7 +203,7 @@ function Certification() {
                   </div>
   
                   <div className="my-auto mx-auto flex flex-col mt-4">
-                    <div className="text-[0.7rem]">Android Engineering (Kotlin) </div>
+                    <div className="text-[0.9rem]">Android Engineering (Kotlin) </div>
   
                   
                   </div>
@@ -212,7 +212,7 @@ function Certification() {
               </Carousel.Item>
 
               <Carousel.Item>
-                <div className="flex flex-col py-2 mx-auto w-[10rem]  ">
+                <div className="flex flex-col py-2 mx-auto w-[15rem]  ">
                   <div>
                     <img
                     
@@ -223,7 +223,7 @@ function Certification() {
                   </div>
   
                   <div className="my-auto mx-auto flex flex-col mt-4">
-                    <div className="text-[0.7rem]">HTML dan CSS Dasar </div>
+                    <div className="text-[0.9rem]">HTML dan CSS Dasar </div>
   
                   
                   </div>
@@ -232,7 +232,7 @@ function Certification() {
               </Carousel.Item>
   
               <Carousel.Item>
-                <div className="flex flex-col py-2 mx-auto w-[10rem]  ">
+                <div className="flex flex-col py-2 mx-auto w-[15rem]  ">
                   <div>
                     <img
                     
@@ -243,7 +243,7 @@ function Certification() {
                   </div>
   
                   <div className="my-auto mx-auto flex flex-col mt-4">
-                    <div className="text-[0.7rem]">Javascript ES6 </div>
+                    <div className="text-[0.9rem]">Javascript ES6 </div>
   
                   
                   </div>
@@ -252,7 +252,7 @@ function Certification() {
               </Carousel.Item>
   
               <Carousel.Item>
-                <div className="flex flex-col py-2 mx-auto w-[10rem]  ">
+                <div className="flex flex-col py-2 mx-auto w-[15rem]  ">
                   <div>
                     <img
                     
@@ -263,7 +263,7 @@ function Certification() {
                   </div>
   
                   <div className="my-auto mx-auto flex flex-col mt-4">
-                    <div className="text-[0.7rem]">React (Javascript)</div>
+                    <div className="text-[0.9rem]">React (Javascript)</div>
   
                   
                   </div>
@@ -273,7 +273,7 @@ function Certification() {
   
               
               <Carousel.Item>
-                <div className="flex flex-col py-2 mx-auto w-[10rem]  ">
+                <div className="flex flex-col py-2 mx-auto w-[15rem]  ">
                   <div>
                     <img
                     
@@ -284,7 +284,7 @@ function Certification() {
                   </div>
   
                   <div className="my-auto mx-auto flex flex-col mt-4">
-                    <div className="text-[0.7rem]">React Native</div>
+                    <div className="text-[0.9rem]">React Native</div>
   
                   
                   </div>
@@ -323,7 +323,7 @@ function Certification() {
       <motion.div
         className={`${
           darkMode ? "bg-[#0d1117] " : "bg-[#f3f3f9]"
-        } h-screens flex flex-col`}
+        } h-screens flex flex-col -mt-2`}
         initial="initial"
         animate="in"
         exit="out"
@@ -331,7 +331,7 @@ function Certification() {
         variants={pageVariants}
       >
         <div
-          className={`flex flex-col mb-2 mx-auto w-5/6 z-0 text-[1rem] min501:text-[1.2rem] mt-2  ${
+          className={`flex flex-col mb-2 mx-auto w-5/6 z-0 text-[1rem] min501:text-[1.2rem] mt-28 min501:mt-4 ${
             darkMode ? "text-white" : "text-[#405189]"
           }`}
         >

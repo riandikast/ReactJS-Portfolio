@@ -203,7 +203,7 @@ function MobileProject() {
           >
         
             <Carousel.Item>
-              <div className="flex flex-col px-3 mt-60  mx-auto w-[9rem] ">
+              <div className="flex flex-col px-3 mt-60  mx-auto w-[14rem] ">
                 <div>
                   <img
                   
@@ -230,7 +230,7 @@ function MobileProject() {
             </Carousel.Item>
 
             <Carousel.Item>
-              <div className="flex flex-col px-3 mt-60  mx-auto w-[9rem] ">
+              <div className="flex flex-col px-3 mt-60  mx-auto w-[14rem] ">
                 <div>
                   <img
                   
@@ -257,7 +257,7 @@ function MobileProject() {
             </Carousel.Item>
 
             <Carousel.Item>
-              <div className="flex flex-col px-3 mt-60  mx-auto w-[9rem] ">
+              <div className="flex flex-col px-3 mt-60  mx-auto w-[14rem] ">
                 <div>
                   <img
                   
@@ -284,7 +284,7 @@ function MobileProject() {
             </Carousel.Item>
 
             <Carousel.Item>
-              <div className="flex flex-col px-3 mt-60  mx-auto w-[9rem] ">
+              <div className="flex flex-col px-3 mt-60  mx-auto w-[14rem] ">
                 <div>
                   <img
                   
@@ -352,7 +352,7 @@ function MobileProject() {
         variants={pageVariants}
       >
         <div
-          className={`flex flex-col mb-2 mx-auto w-5/6 z-0  text-[1rem] min501:text-[1.2rem] mt-2  ${
+          className={`flex flex-col mb-2 mx-auto w-5/6 z-0  text-[1rem] min501:text-[1.2rem] mt-12 min501:mt-4  ${
             darkMode ? "text-white" : "text-[#405189]"
           }`}
         >

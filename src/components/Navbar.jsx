@@ -595,7 +595,7 @@ function Navbar() {
           variants={pageVariants}
           className={`${
             darkMode ? "bg-[#394c5d]" : "bg-[#405189]"
-          }  text-[#c4c6c9]  flex flex-col text-center fixed h-screen top-8 text-left ml-3 w-4/6 max-w-[8rem] rounded-lg shadow-lg p-6`}
+          }  text-[#c4c6c9] space-y-5 flex flex-col text-center fixed h-screen top-8 text-left ml-3 w-4/6 max-w-[8rem] rounded-lg shadow-lg p-6`}
         >
           <button
             className=" w-5 h-5 ml-auto relative bottom-2 left-2"
@@ -603,17 +603,19 @@ function Navbar() {
           >
             <CloseButton />
           </button>
+
+          <div className="relative bottom-5 flex flex-col">
           <NavLink
             to={path === "/" ? "" : "/"}
-            className={
+            className={ 
               scrollPosition <= 320 &&
               path === "/" &&
               navDelay !== 1 &&
               navTransition === 0
-                ? ` text-sm md:text-base mr-4  ${
+                ? ` text-[1.1rem] mr-4  ${
                     darkMode ? "text-[#ffffff]" : "text-[#ffffff]"
                   } `
-                : " text-sm md:text-base mr-4  "
+                : " text-[1.1rem] md:text-base mr-4  " 
             }
             onClick={scrollToHomeMobile}
           >
@@ -627,10 +629,10 @@ function Navbar() {
               scrollPosition <= 700 &&
               path === "/" &&
               navTransition === 0
-                ? `text-sm md:text-base mr-4 mt-4   ${
+                ? `text-[1.1rem] mr-4 mt-4   ${
                     darkMode ? "text-[#ffffff]" : "text-[#ffffff]"
                   } `
-                : " text-sm md:text-base mr-4 mt-4"
+                : "text-[1.1rem] mr-4 mt-4"
             }
             onClick={scrollToAboutMobile}
           >
@@ -644,10 +646,10 @@ function Navbar() {
               scrollPosition <= 1100 &&
               path === "/" &&
               navTransition === 0
-                ? `text-sm md:text-base mr-4 mt-4   ${
+                ? `text-[1.1rem] mr-4 mt-4   ${
                     darkMode ? "text-[#ffffff]" : "text-[#ffffff]"
                   } `
-                : " text-sm md:text-base mr-4 mt-4"
+                : "text-[1.1rem] mr-4 mt-4"
             }
             onClick={scrollToSkillsMobile}
           >
@@ -661,16 +663,16 @@ function Navbar() {
               scrollPosition <= 1370 &&
               path === "/" &&
               navTransition === 0
-                ? `text-sm md:text-base mr-4 mt-4  ${
+                ? `text-[1.1rem] mr-4 mt-4  ${
                     darkMode ? "text-[#ffffff]" : "text-[#ffffff]"
                   } `
                 : path === "/project/desktop" ||
                   path === "/project/website" ||
                   path === "/project/mobile"
-                ? `text-sm md:text-base mr-4 mt-4  ${
+                ? `text-[1.1rem] mr-4 mt-4  ${
                     darkMode ? "text-[#ffffff]" : "text-[#ffffff]"
                   } `
-                : " text-sm md:text-base mr-4 mt-4"
+                : "text-[1.1rem] mr-4 mt-4"
             }
             onClick={scrollToProjectMobile}
           >
@@ -681,15 +683,17 @@ function Navbar() {
             to={path === "/" ? "" : "/"}
             className={
               scrollPosition > 1370 && path === "/" && navTransition === 0
-                ? `text-sm md:text-base mr-4 mt-4  ${
+                ? `text-[1.1rem] mr-4 mt-4  ${
                     darkMode ? "text-[#ffffff]" : "text-[#ffffff]"
                   } `
-                : " text-sm md:text-base mr-4 mt-4"
+                : "text-[1.1rem] mr-4 mt-4"
             }
             onClick={scrollToContactMobile}
           >
             Contact
           </NavLink>
+          </div>
+   
         </motion.div>
       </AnimatePresence>
     );

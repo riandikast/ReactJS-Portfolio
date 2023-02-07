@@ -145,7 +145,7 @@ function DesktopProject() {
           >
         
             <Carousel.Item>
-              <div className="flex flex-col px-3 mt-60  mx-auto w-[11rem] ">
+              <div className="flex flex-col px-3 mt-60  mx-auto w-[15rem] ">
                 <div>
                   <img
                   
@@ -171,7 +171,7 @@ function DesktopProject() {
               </div>
             </Carousel.Item>
             <Carousel.Item>
-              <div className="flex flex-col px-3 mt-60  mx-auto w-[10rem] ">
+              <div className="flex flex-col px-3 mt-60  mx-auto w-[15rem] ">
                 <div>
                   <img
                   
@@ -239,7 +239,7 @@ function DesktopProject() {
         variants={pageVariants}
       >
         <div
-          className={`flex flex-col mb-2 mx-auto w-5/6 z-0 text-[1rem] min501:text-[1.2rem] mt-2  ${
+          className={`flex flex-col mb-2 mx-auto w-5/6 z-0 text-[1rem] min501:text-[1.2rem] mt-28 min501:mt-4 ${
             darkMode ? "text-white" : "text-[#405189]"
           }`}
         >
