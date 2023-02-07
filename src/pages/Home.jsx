@@ -217,7 +217,7 @@ function Home() {
               darkMode ? "text-white" : "text-[#405189]"
             } ${
               scrollPosition > 700 ? "hidden" : ""
-            } font-google text-justify text-[0.5rem] font-semibold  `}
+            } font-google text-justify text-[0.7rem] font-semibold  `}
           >
             {/* Hello I'm Andika, Passionate on Android, website and Game
             development I have been involved in project with some language like
@@ -442,7 +442,7 @@ function Home() {
                 <div className="flex flex-col text-left mx-auto ">
                   <div className="flex flex-row mt-[3px]">
                     <h1 className="text-[1rem] ">Email</h1>
-                    <div className="text-[1rem] ml-auto mt-[1px]">
+                    <div className="text-[1rem] ml-auto mt-[1px] relative">
                       {darkMode ? (
                         <i className="bx bx-link-external"></i>
                       ) : (
@@ -491,7 +491,7 @@ function Home() {
                 <div className="flex flex-col text-left    mx-auto">
                   <div className="flex flex-row mt-[3px]">
                     <h1 className="text-[1rem] ">Linkedin</h1>
-                    <div className="text-[1rem] ml-auto mt-[1px]">
+                    <div className="text-[1rem] ml-auto mt-[1px] left-1 relative ">
                       {darkMode ? (
                         <i className="bx bx-link-external"></i>
                       ) : (
@@ -521,7 +521,7 @@ function Home() {
             >
               <div className="flex flex-row">
                 <a
-                  href="https://www.linkedin.com/in/riandikast/"
+                  href="https://github.com/riandikast"
                   className="flex flex-col text-[3rem] mr-1"
                 >
                   {" "}
@@ -537,7 +537,7 @@ function Home() {
                 <div className="flex flex-col text-left    mx-auto mb-16 ">
                   <div className="flex flex-row mt-[3px]">
                     <h1 className="text-[1rem] ">Github</h1>
-                    <div className="text-[1rem] ml-auto  mt-[1px]">
+                    <div className="text-[1rem] ml-auto left-1 relative  mt-[1px]">
                       {darkMode ? (
                         <i className="bx bx-link-external "></i>
                       ) : (

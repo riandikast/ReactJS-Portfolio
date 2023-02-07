@@ -432,15 +432,15 @@ function Navbar() {
           setNavTransition(0);
         }
       } else if (navTransition === "skills") {
-        if (scrollPosition > 700 && scrollPosition <= 1370) {
+        if (scrollPosition > 700 && scrollPosition <= 1100) {
           setNavTransition(0);
         }
       } else if (navTransition === "project") {
-        if (scrollPosition > 1370 && scrollPosition <= 1740) {
+        if (scrollPosition > 1100 && scrollPosition <= 1370) {
           setNavTransition(0);
         }
       } else if (navTransition === "contact") {
-        if (scrollPosition > 1740) {
+        if (scrollPosition > 1370) {
           setNavTransition(0);
         }
       }
@@ -641,7 +641,7 @@ function Navbar() {
             to={path === "/" ? "" : "/"}
             className={
               scrollPosition > 700 &&
-              scrollPosition <= 1370 &&
+              scrollPosition <= 1100 &&
               path === "/" &&
               navTransition === 0
                 ? `text-sm md:text-base mr-4 mt-4   ${
@@ -657,8 +657,8 @@ function Navbar() {
           <NavLink
             to={path === "/" ? "" : "/"}
             className={
-              scrollPosition > 1370 &&
-              scrollPosition <= 1740 &&
+              scrollPosition > 1100 &&
+              scrollPosition <= 1370 &&
               path === "/" &&
               navTransition === 0
                 ? `text-sm md:text-base mr-4 mt-4  ${
@@ -680,7 +680,7 @@ function Navbar() {
           <NavLink
             to={path === "/" ? "" : "/"}
             className={
-              scrollPosition > 1740 && path === "/" && navTransition === 0
+              scrollPosition > 1370 && path === "/" && navTransition === 0
                 ? `text-sm md:text-base mr-4 mt-4  ${
                     darkMode ? "text-[#ffffff]" : "text-[#ffffff]"
                   } `
