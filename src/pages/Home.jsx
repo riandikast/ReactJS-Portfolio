@@ -181,7 +181,7 @@ function Home() {
           <div
             className={`w-4/6 mb-2 mt-4  ${
               darkMode ? "text-white" : "text-[#405189]"
-            } font-google text-center text-[0.9rem] font-semibold  `}
+            } font-google text-center text-[0.95rem] font-semibold  `}
           >
             Amanda Riandikaseta
           </div>
@@ -189,13 +189,13 @@ function Home() {
           <div
             className={`w-4/6 mb-2  ${
               darkMode ? "text-white" : "text-[#405189]"
-            } font-google text-center text-[0.75rem] font-semibold  `}
+            } font-google text-center text-[0.8rem] font-semibold  `}
           >
             Software Engineer
           </div>
 
           <div>
-            <Social size={"text-lg"} />
+            <Social size={"text-3xl"} />
           </div>
 
           {/* About me........................................ */}
@@ -217,7 +217,7 @@ function Home() {
               darkMode ? "text-white" : "text-[#405189]"
             } ${
               scrollPosition > 700 ? "hidden" : ""
-            } font-google text-justify text-[0.7rem] font-semibold  `}
+            } font-google text-justify text-[0.75rem] font-semibold  `}
           >
             {/* Hello I'm Andika, Passionate on Android, website and Game
             development I have been involved in project with some language like

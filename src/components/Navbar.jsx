@@ -338,20 +338,20 @@ function Navbar() {
     setNavTransition("project");
     if (path === "/") {
       window.scrollTo({
-        top: 1501,
+        top: 1201,
         behavior: "smooth",
       });
     } else {
       setNavDelay(1);
       setTimeout(() => {
         window.scrollTo({
-          top: 1501,
+          top: 1201,
           behavior: "smooth",
         });
 
         setTimeout(() => {
           window.scrollTo({
-            top: 1501,
+            top: 1201,
             behavior: "smooth",
           });
         }, 100);
@@ -368,20 +368,20 @@ function Navbar() {
     setNavTransition("contact");
     if (path === "/") {
       window.scrollTo({
-        top: 2500,
+        top: 1500,
         behavior: "smooth",
       });
     } else {
       setNavDelay(1);
       setTimeout(() => {
         window.scrollTo({
-          top: 200,
+          top: 1500,
           behavior: "smooth",
         });
 
         setTimeout(() => {
           window.scrollTo({
-            top: 2500,
+            top: 1500,
             behavior: "smooth",
           });
         }, 150);
