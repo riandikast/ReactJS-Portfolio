@@ -399,7 +399,7 @@ function Navbar() {
 
   const screenWidth = window.innerWidth;
   useEffect(() => {
-    console.log ('www', screenWidth)
+    console.log("www", screenWidth);
     if (screenWidth >= 500) {
       if (navTransition === "home") {
         if (scrollPosition <= 205) {
@@ -432,15 +432,15 @@ function Navbar() {
           setNavTransition(0);
         }
       } else if (navTransition === "skills") {
-        if (scrollPosition > 700 && scrollPosition <= 1500) {
+        if (scrollPosition > 700 && scrollPosition <= 1370) {
           setNavTransition(0);
         }
       } else if (navTransition === "project") {
-        if (scrollPosition > 1500 && scrollPosition <= 2500) {
+        if (scrollPosition > 1370 && scrollPosition <= 1740) {
           setNavTransition(0);
         }
       } else if (navTransition === "contact") {
-        if (scrollPosition > 1900) {
+        if (scrollPosition > 1740) {
           setNavTransition(0);
         }
       }
@@ -641,7 +641,7 @@ function Navbar() {
             to={path === "/" ? "" : "/"}
             className={
               scrollPosition > 700 &&
-              scrollPosition <= 1500 &&
+              scrollPosition <= 1370 &&
               path === "/" &&
               navTransition === 0
                 ? `text-sm md:text-base mr-4 mt-4   ${
@@ -657,16 +657,16 @@ function Navbar() {
           <NavLink
             to={path === "/" ? "" : "/"}
             className={
-              scrollPosition > 1500 &&
-              scrollPosition <= 1800 &&
+              scrollPosition > 1370 &&
+              scrollPosition <= 1740 &&
               path === "/" &&
               navTransition === 0
                 ? `text-sm md:text-base mr-4 mt-4  ${
                     darkMode ? "text-[#ffffff]" : "text-[#ffffff]"
                   } `
                 : path === "/project/desktop" ||
-                path === "/project/website" ||
-                path === "/project/mobile"
+                  path === "/project/website" ||
+                  path === "/project/mobile"
                 ? `text-sm md:text-base mr-4 mt-4  ${
                     darkMode ? "text-[#ffffff]" : "text-[#ffffff]"
                   } `
@@ -680,7 +680,7 @@ function Navbar() {
           <NavLink
             to={path === "/" ? "" : "/"}
             className={
-              scrollPosition > 1800 && path === "/" && navTransition === 0
+              scrollPosition > 1740 && path === "/" && navTransition === 0
                 ? `text-sm md:text-base mr-4 mt-4  ${
                     darkMode ? "text-[#ffffff]" : "text-[#ffffff]"
                   } `

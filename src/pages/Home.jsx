@@ -261,7 +261,7 @@ function Home() {
 
           <div>
             <Link
-              to='/certification'
+              to="/certification"
               data-aos="fade-up"
               className={` mb-2 mt-4 rounded sm p-2 ${
                 darkMode
@@ -416,139 +416,144 @@ function Home() {
             Contact
           </div>
 
-          <div
-            data-aos="fade-up"
-            className={` mb-5  ${
-              darkMode
-                ? "text-white  border-white"
-                : "text-[#405189] border-[#405189]"
-            } font-google text-center text-[0.6rem] font-semibold  `}
-          >
-            <div className="flex flex-row">
-              <a
-                href="https://www.linkedin.com/in/riandikast/"
-                className="flex flex-col text-[1.5rem] mr-1"
-              >
-                {" "}
-                {darkMode ? (
-                  <i className="bx bx-envelope "></i>
-                ) : (
-                  <i className="bx bx-envelope" style={{ color: "#405189" }}>
-                    {" "}
-                  </i>
-                )}
-              </a>
-              <div className="flex flex-col text-left w-[5rem] mx-auto ">
-                <div className="flex flex-row mt-[3px]">
-                  <h1 className="text-[0.5rem] ">Email</h1>
-                  <div className="text-[0.45rem] ml-auto mt-[1px]">
-                    {darkMode ? (
-                      <i className="bx bx-link-external"></i>
-                    ) : (
-                      <i
-                        className="bx bx-link-external"
-                        style={{ color: "#405189" }}
-                      >
-                        {" "}
-                      </i>
-                    )}
+          <div className="flex flex-col mx-auto">
+            <div
+              data-aos="fade-up"
+              className={` mb-5  ${
+                darkMode
+                  ? "text-white  border-white"
+                  : "text-[#405189] border-[#405189]"
+              } font-google text-center text-[0.6rem] font-semibold w-3/5 `}
+            >
+              <div className="flex flex-row">
+                <a
+                  href="https://www.linkedin.com/in/riandikast/"
+                  className="flex flex-col text-[3rem]  mr-1"
+                >
+                  {" "}
+                  {darkMode ? (
+                    <i className="bx bx-envelope "></i>
+                  ) : (
+                    <i className="bx bx-envelope" style={{ color: "#405189" }}>
+                      {" "}
+                    </i>
+                  )}
+                </a>
+                <div className="flex flex-col text-left mx-auto ">
+                  <div className="flex flex-row mt-[3px]">
+                    <h1 className="text-[1rem] ">Email</h1>
+                    <div className="text-[1rem] ml-auto mt-[1px]">
+                      {darkMode ? (
+                        <i className="bx bx-link-external"></i>
+                      ) : (
+                        <i
+                          className="bx bx-link-external"
+                          style={{ color: "#405189" }}
+                        >
+                          {" "}
+                        </i>
+                      )}
+                    </div>
                   </div>
-                </div>
 
-                <h1 className="text-[0.35rem] whitespace-nowrap">
-                  riandikas.rs@gmail.com
-                </h1>
+                  <h1 className="text-[0.7rem] whitespace-nowrap">
+                    riandikasp@gmail.com
+                  </h1>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div
-            data-aos="fade-up"
-            className={` mb-5  ${
-              darkMode
-                ? "text-white  border-white"
-                : "text-[#405189] border-[#405189]"
-            } font-google text-center text-[0.8rem] font-semibold  `}
-          >
-            <div className="flex flex-row">
-              <a
-                href="https://www.linkedin.com/in/riandikast/"
-                className="flex flex-col text-[1.5rem] mr-1 "
-              >
-                {" "}
-                {darkMode ? (
-                  <i className="bx bxl-linkedin-square"></i>
-                ) : (
-                  <i
-                    className="bx bxl-linkedin-square"
-                    style={{ color: "#405189" }}
-                  >
-                    {" "}
-                  </i>
-                )}
-              </a>
-              <div className="flex flex-col text-left   w-[5rem] mx-auto">
-                <div className="flex flex-row mt-[3px]">
-                  <h1 className="text-[0.5rem] ">Linkedin</h1>
-                  <div className="text-[0.45rem] ml-auto mt-[1px]">
-                    {darkMode ? (
-                      <i className="bx bx-link-external"></i>
-                    ) : (
-                      <i
-                        className="bx bx-link-external"
-                        style={{ color: "#405189" }}
-                      >
-                        {" "}
-                      </i>
-                    )}
+            <div
+              data-aos="fade-up"
+              className={` mb-5  ${
+                darkMode
+                  ? "text-white  border-white"
+                  : "text-[#405189] border-[#405189]"
+              } font-google text-center text-[0.8rem] font-semibold w-3/5  `}
+            >
+              <div className="flex flex-row">
+                <a
+                  href="https://www.linkedin.com/in/riandikast/"
+                  className="flex flex-col text-[3rem] mr-1 "
+                >
+                  {" "}
+                  {darkMode ? (
+                    <i className="bx bxl-linkedin-square"></i>
+                  ) : (
+                    <i
+                      className="bx bxl-linkedin-square"
+                      style={{ color: "#405189" }}
+                    >
+                      {" "}
+                    </i>
+                  )}
+                </a>
+                <div className="flex flex-col text-left    mx-auto">
+                  <div className="flex flex-row mt-[3px]">
+                    <h1 className="text-[1rem] ">Linkedin</h1>
+                    <div className="text-[1rem] ml-auto mt-[1px]">
+                      {darkMode ? (
+                        <i className="bx bx-link-external"></i>
+                      ) : (
+                        <i
+                          className="bx bx-link-external"
+                          style={{ color: "#405189" }}
+                        >
+                          {" "}
+                        </i>
+                      )}
+                    </div>
                   </div>
+                  <h1 className="text-[0.7rem] whitespace-nowrap">
+                    Amanda Riandikaseta
+                  </h1>
                 </div>
-                <h1 className="text-[0.35rem] whitespace-nowrap">
-                  Amanda Riandikaseta
-                </h1>
               </div>
             </div>
-          </div>
 
-          <div
-            data-aos="fade-up"
-            className={` mb-40  ${
-              darkMode
-                ? "text-white  border-white"
-                : "text-[#405189] border-[#405189]"
-            } font-google text-center text-[0.8rem] font-semibold  `}
-          >
-            <div className="flex flex-row">
-              <a
-                href="https://www.linkedin.com/in/riandikast/"
-                className="flex flex-col text-[1.5rem] mr-1"
-              >
-                {" "}
-                {darkMode ? (
-                  <i className={"bx bxl-github"}></i>
-                ) : (
-                  <i className="bx bxl-github" style={{ color: "#405189" }}></i>
-                )}
-              </a>
-              <div className="flex flex-col text-left   w-[5rem] mx-auto mb-16 ">
-                <div className="flex flex-row mt-[3px]">
-                  <h1 className="text-[0.5rem] ">Github</h1>
-                  <div className="text-[0.45rem] ml-auto  mt-[1px]">
-                    {darkMode ? (
-                      <i className="bx bx-link-external "></i>
-                    ) : (
-                      <i
-                        className="bx bx-link-external"
-                        style={{ color: "#405189" }}
-                      >
-                        {" "}
-                      </i>
-                    )}
+            <div
+              data-aos="fade-up"
+              className={` mb-40  ${
+                darkMode
+                  ? "text-white  border-white"
+                  : "text-[#405189] border-[#405189]"
+              } font-google text-center text-[0.8rem] font-semibold w-3/5  `}
+            >
+              <div className="flex flex-row">
+                <a
+                  href="https://www.linkedin.com/in/riandikast/"
+                  className="flex flex-col text-[3rem] mr-1"
+                >
+                  {" "}
+                  {darkMode ? (
+                    <i className={"bx bxl-github"}></i>
+                  ) : (
+                    <i
+                      className="bx bxl-github"
+                      style={{ color: "#405189" }}
+                    ></i>
+                  )}
+                </a>
+                <div className="flex flex-col text-left    mx-auto mb-16 ">
+                  <div className="flex flex-row mt-[3px]">
+                    <h1 className="text-[1rem] ">Github</h1>
+                    <div className="text-[1rem] ml-auto  mt-[1px]">
+                      {darkMode ? (
+                        <i className="bx bx-link-external "></i>
+                      ) : (
+                        <i
+                          className="bx bx-link-external"
+                          style={{ color: "#405189" }}
+                        >
+                          {" "}
+                        </i>
+                      )}
+                    </div>
                   </div>
+                  <h1 className="text-[0.7rem] whitespace-nowrap ">
+                    Amanda Riandikaseta
+                  </h1>
                 </div>
-                <h1 className="text-[0.35rem] whitespace-nowrap ">
-                  Amanda Riandikaseta
-                </h1>
               </div>
             </div>
           </div>
@@ -648,7 +653,7 @@ function Home() {
 
           <div>
             <Link
-              to='/certification'
+              to="/certification"
               data-aos="fade-up"
               className={` mb-2 mt-4 rounded sm p-2 ${
                 darkMode
