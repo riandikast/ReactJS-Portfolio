@@ -109,7 +109,7 @@ function MobileProject() {
                   <div className="text-[0.8rem] mt-4">Platform:</div>
                   <div className="text-[0.9rem] line-clamp-1">Android</div>
                   <div className="text-[0.8rem] mt-4">Description:</div>
-                  <div className="text-[0.9rem] line-clamp-4">Floating Text Template is a note-taking Android application with a unique feature that
+                  <div className="text-[0.9rem] line-clamp-5">Floating Text Template is a note-taking Android application with a unique feature that
 allows it to float over other apps, making it easier to copy any saved note.</div>
                   <div className={`flex flex-row space-x-4 mt-4 ${darkMode ? '' : ''}`}> 
                   <button className={` opacity-40  text-[0.9rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Preview</button>
