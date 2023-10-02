@@ -25,6 +25,7 @@ import { ReactComponent as Mysql } from "../assets/Mysql.svg";
 import Desktop from "../assets/Desktop.png";
 import Phone from "../assets/Phone.png";
 import Website from "../assets/Website.png";
+import WinTerminal from "../assets/wint.png";
 import Carousel from "better-react-carousel";
 import { Typewriter } from "react-simple-typewriter";
 import { useScrollPosition } from "../customHooks/useScrollPosition";
@@ -51,9 +52,9 @@ function Home() {
   const scrollPosition = useScrollPosition();
   console.log("a", scrollPosition);
   const openInNewTab = (url) => {
-    const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
-    if (newWindow) newWindow.opener = null
-  }
+    const newWindow = window.open(url, "_blank", "noopener,noreferrer");
+    if (newWindow) newWindow.opener = null;
+  };
   const typeWriterLoop = () => {
     if (scrollPosition > 205 && scrollPosition <= 680) {
       return 0;
@@ -168,6 +169,8 @@ function Home() {
               />
               <div className="text-[0.8rem] ">Mobile</div>
             </Carousel.Item>
+
+          
           </Carousel>
         </div>
       </>
@@ -228,7 +231,7 @@ function Home() {
             student in Singaperbangsa Karawang University. */}
             <Typewriter
               words={[
-                "Hello I'm Andika, Passionate on Android, website and game development I have been involved in project with some language like Kotlin, Javascript, Python, Etc. Currently I serve as college student in singaperbangsa karawang  ",
+                "Hello, I'm Andika. I have been involved in projects using various programming languages such as Kotlin, JavaScript, Python, and more. Let's take a look at my projects.",
               ]}
               loop={false}
               cursor
@@ -419,9 +422,8 @@ function Home() {
             Contact
           </div>
 
-          <div className="flex flex-col mx-auto" >
+          <div className="flex flex-col mx-auto">
             <div
-             
               data-aos="fade-up"
               className={` mb-5  ${
                 darkMode
@@ -430,12 +432,7 @@ function Home() {
               } font-google text-center text-[0.6rem] font-semibold w-3/5 `}
             >
               <div className="flex flex-row">
-                <a
-            
-
-                 
-                  className="flex flex-col text-[3rem]  mr-1"
-                >
+                <a className="flex flex-col text-[3rem]  mr-1">
                   {" "}
                   {darkMode ? (
                     <i className="bx bx-envelope "></i>
@@ -445,7 +442,14 @@ function Home() {
                     </i>
                   )}
                 </a>
-                <div className="flex flex-col text-left mx-auto ">
+                <div
+                  className="flex flex-col text-left mx-auto "
+                  onClick={() =>
+                    openInNewTab(
+                      "https://mail.google.com/mail/u/0/#inbox?compose=new"
+                    )
+                  }
+                >
                   <div className="flex flex-row mt-[3px]">
                     <h1 className="text-[1rem] ">Email</h1>
                     <div className="text-[1rem] ml-auto mt-[1px] relative">
@@ -470,7 +474,9 @@ function Home() {
             </div>
 
             <div
-              onClick={()=> openInNewTab('https://www.linkedin.com/in/riandikast/')}
+              onClick={() =>
+                openInNewTab("https://www.linkedin.com/in/riandikast/")
+              }
               data-aos="fade-up"
               className={` mb-5  ${
                 darkMode
@@ -479,10 +485,7 @@ function Home() {
               } font-google text-center text-[0.8rem] font-semibold w-3/5  `}
             >
               <div className="flex flex-row">
-                <a
-            
-                  className="flex flex-col text-[3rem] mr-1 "
-                >
+                <a className="flex flex-col text-[3rem] mr-1 ">
                   {" "}
                   {darkMode ? (
                     <i className="bx bxl-linkedin-square"></i>
@@ -519,7 +522,7 @@ function Home() {
             </div>
 
             <div
-              onClick={()=> openInNewTab('https://github.com/riandikast')}
+              onClick={() => openInNewTab("https://github.com/riandikast")}
               data-aos="fade-up"
               className={` mb-40  ${
                 darkMode
@@ -528,9 +531,7 @@ function Home() {
               } font-google text-center text-[0.8rem] font-semibold w-3/5  `}
             >
               <div className="flex flex-row">
-                <a
-                  className="flex flex-col text-[3rem] mr-1"
-                >
+                <a className="flex flex-col text-[3rem] mr-1">
                   {" "}
                   {darkMode ? (
                     <i className={"bx bxl-github"}></i>
@@ -624,7 +625,7 @@ function Home() {
           >
             <Typewriter
               words={[
-                "Hello I'm Andika, Passionate on Android, website and game development I have been involved in project with some language like Kotlin, Javascript, Python, Etc. Currently I serve as college student in singaperbangsa karawang  ",
+                "Hello, I'm Andika. I have been involved in projects using various programming languages such as Kotlin, JavaScript, Python, and more. Let's take a look at my projects.",
               ]}
               loop={typeWriterLoop}
               cursor
@@ -819,11 +820,15 @@ function Home() {
                   : "text-[#405189] border-[#405189]"
               } font-google text-center text-[0.6rem] font-semibold  `}
             >
-              <div className="flex flex-row">
-                <a
-                  href="https://www.linkedin.com/in/riandikast/"
-                  className="flex flex-col text-[2.2rem] mr-2"
-                >
+              <div
+                className="flex flex-row"
+                onClick={() =>
+                  openInNewTab(
+                    "https://mail.google.com/mail/u/0/#inbox?compose=new"
+                  )
+                }
+              >
+                <a className="flex flex-col text-[2.2rem] mr-2">
                   {" "}
                   {darkMode ? (
                     <i className="bx bx-envelope "></i>
@@ -858,7 +863,9 @@ function Home() {
             </div>
 
             <div
-              onClick={()=> openInNewTab('https://www.linkedin.com/in/riandikast/')}
+              onClick={() =>
+                openInNewTab("https://www.linkedin.com/in/riandikast/")
+              }
               data-aos="fade-up"
               className={` mb-5  ${
                 darkMode
@@ -867,10 +874,7 @@ function Home() {
               } font-google text-center text-[0.8rem] font-semibold  `}
             >
               <div className="flex flex-row">
-                <a
-               
-                  className="flex flex-col text-[2.2rem] mr-2  "
-                >
+                <a className="flex flex-col text-[2.2rem] mr-2  ">
                   {" "}
                   {darkMode ? (
                     <i className="bx bxl-linkedin-square"></i>
@@ -907,7 +911,7 @@ function Home() {
             </div>
 
             <div
-              onClick={()=> openInNewTab('https://github.com/riandikast')}
+              onClick={() => openInNewTab("https://github.com/riandikast")}
               data-aos="fade-up"
               className={` mb-40  ${
                 darkMode
@@ -916,10 +920,7 @@ function Home() {
               } font-google text-center text-[0.8rem] font-semibold  `}
             >
               <div className="flex flex-row">
-                <a
-              
-                  className="flex flex-col text-[2.2rem] mr-2"
-                >
+                <a className="flex flex-col text-[2.2rem] mr-2">
                   {" "}
                   {darkMode ? (
                     <i className={"bx bxl-github"}></i>

@@ -78,7 +78,7 @@ function DesktopProject() {
                   <div className="text-[0.8rem] mt-4">Platform:</div>
                   <div className="text-[0.9rem] line-clamp-1">Windows</div>
                   <div className="text-[0.8rem] mt-4">Description:</div>
-                  <div className="text-[0.9rem] line-clamp-4">2D Desktop game, the concept is like metal slug but with character skill, created using python (pygame)</div>
+                  <div className="text-[0.9rem] line-clamp-4">Monster Shooter is a 2D shooter game built with Python (pygame)</div>
                   <div className={`flex flex-row space-x-4 mt-4 ${darkMode ? '' : ''}`}> 
                   <button onClick={() => openInNewTab('https://youtu.be/pIG8BH9Z0TI')} className={`text-[0.9rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Preview</button>
                   <button onClick={() => openInNewTab('https://drive.google.com/file/d/13a0FVE_-NFJc-NRAz2Cq-EBhKa3gevCc/view?usp=share_link')} className={`text-[0.9rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Download</button>
@@ -105,7 +105,8 @@ function DesktopProject() {
                   <div className="text-[0.8rem] mt-4">Platform:</div>
                   <div className="text-[0.9rem] line-clamp-1">Windows</div>
                   <div className="text-[0.8rem] mt-4">Description:</div>
-                  <div className="text-[0.9rem] line-clamp-4">Educational desktop application created using java</div>
+                  <div className="text-[0.9rem] line-clamp-4">Clever Class is a Windows application built with Java, designed for presenting senior
+high school lessons.</div>
                   <div className={`flex flex-row space-x-4 mt-4 ${darkMode ? '' : ''}`}> 
                   <button className={`opacity-40 text-[0.9rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Preview</button>
                   <button className={`opacity-40 text-[0.9rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Download</button>
@@ -161,7 +162,7 @@ function DesktopProject() {
                   <div className="text-[0.6rem] mt-2">Platform:</div>
                   <div className="text-[0.7rem] line-clamp-1">Windows</div>
                   <div className="text-[0.6rem] mt-2">Description:</div>
-                  <div className="text-[0.7rem] line-clamp-5">2D Desktop game, the concept is like metal slug but with character skill, created using python (pygame)</div>
+                  <div className="text-[0.7rem] line-clamp-5">Monster Shooter is a 2D shooter game built with Python (pygame).</div>
                   <div className={`flex flex-row space-x-4 mt-2 ${darkMode ? '' : ''}`}> 
                   <button onClick={() => openInNewTab('https://youtu.be/pIG8BH9Z0TI')} className={`text-[0.6rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Preview</button>
                   <button onClick={() => openInNewTab('https://drive.google.com/file/d/13a0FVE_-NFJc-NRAz2Cq-EBhKa3gevCc/view?usp=share_link')} className={`text-[0.6rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Download</button>
@@ -187,10 +188,11 @@ function DesktopProject() {
                   <div className="text-[0.6rem] mt-2">Platform:</div>
                   <div className="text-[0.7rem] line-clamp-1">Windows</div>
                   <div className="text-[0.6rem] mt-2">Description:</div>
-                  <div className="text-[0.7rem] line-clamp-5">Educational desktop application created using java</div>
+                  <div className="text-[0.7rem] line-clamp-5">Clever Class is a Windows application built with Java, designed for presenting senior
+high school lessons.</div>
                   <div className={`flex flex-row space-x-4 mt-2 ${darkMode ? '' : ''}`}> 
-                  <button onClick={() => openInNewTab('https://youtu.be/pIG8BH9Z0TI')} className={`text-[0.6rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Preview</button>
-                  <button onClick={() => openInNewTab('https://drive.google.com/file/d/13a0FVE_-NFJc-NRAz2Cq-EBhKa3gevCc/view?usp=share_link')} className={`text-[0.6rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Download</button>
+                  <button className={`opacity-40 text-[0.6rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Preview</button>
+                  <button className={`opacity-40 text-[0.6rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Download</button>
                   </div>
                 </div>
 

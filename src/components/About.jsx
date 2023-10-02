@@ -14,11 +14,9 @@ function About({width, height}) {
                   <div>About</div>
                 </div>
                 <div className="mr-24    font-google text-sm font-semibold ml-2 mt-8">
-                  Hello I'm Andika, I'm a Junior Developer Passionate on Android
-                  and Game development <br></br> I have been involved in project
+                  Hello I'm Andika,  <br></br> I have been involved in project
                   with some language like Kotlin, Javascript, Python, Etc.{" "}
-                  <br></br>Currently I serve as college student in
-                  Singaperbangsa Karawang University.
+                  <br></br>lets take a look at my project.
                 </div>
               </div>
        

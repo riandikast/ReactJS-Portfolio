@@ -79,7 +79,7 @@ function WebsiteProject() {
                   <div className="text-[0.8rem] mt-4">Platform:</div>
                   <div className="text-[0.9rem] line-clamp-1">Website</div>
                   <div className="text-[0.8rem] mt-4">Description:</div>
-                  <div className="text-[0.9rem] line-clamp-4">Simple Wesbite that showing movie data from API with trailer</div>
+                  <div className="text-[0.9rem] line-clamp-4">Straightforward Wesbite that showing movie trailer and desc from API</div>
                   <div className={`flex flex-row space-x-4 mt-4 ${darkMode ? '' : ''}`}> 
                   <button onClick={() => openInNewTab('https://react-movie-h8are3rvm-riandikast.vercel.app/')} className={`text-[0.9rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Preview</button>
                   <button onClick={() => openInNewTab('https://github.com/riandikast/React-Movie-Final.git')} className={`text-[0.9rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Download</button>
@@ -160,7 +160,7 @@ function WebsiteProject() {
                   <div className="text-[0.8rem] mt-4">Platform:</div>
                   <div className="text-[0.9rem] line-clamp-1">Website</div>
                   <div className="text-[0.8rem] mt-4">Description:</div>
-                  <div className="text-[0.9rem] line-clamp-5">Simple online shop web application created using Codeigniter as framework </div>
+                  <div className="text-[0.9rem] line-clamp-5">An online shop website created using CodeIgniter as the framework.</div>
                   <div className={`flex flex-row space-x-4 mt-4 ${darkMode ? '' : ''}`}> 
                   <button className={`opacity-40  text-[0.9rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Preview</button>
                   <button className={`opacity-40  text-[0.9rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Download</button>
@@ -188,7 +188,7 @@ function WebsiteProject() {
                   <div className="text-[0.8rem] mt-4">Platform:</div>
                   <div className="text-[0.9rem] line-clamp-1">Website</div>
                   <div className="text-[0.8rem] mt-4">Description:</div>
-                  <div className="text-[0.9rem] line-clamp-5">Simple Website for showing updated News from API </div>
+                  <div className="text-[0.9rem] line-clamp-5">Straightforward Website for showing updated News from API </div>
                   <div className={`flex flex-row space-x-4 mt-4 ${darkMode ? '' : ''}`}> 
                   <button className={`opacity-40 text-[0.9rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Preview</button>
                   <button onClick={() => openInNewTab('https://github.com/riandikast/final-news.git')} className={` text-[0.9rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Download</button>
@@ -244,10 +244,10 @@ function WebsiteProject() {
                   <div className="text-[0.6rem] mt-2">Platform:</div>
                   <div className="text-[0.7rem] line-clamp-1">Website</div>
                   <div className="text-[0.6rem] mt-2">Description:</div>
-                  <div className="text-[0.7rem] line-clamp-5">Simple Wesbite that showing movie data from API with trailer</div>
+                  <div className="text-[0.7rem] line-clamp-5">Straightforward Wesbite that showing movie trailer and desc from API</div>
                   <div className={`flex flex-row space-x-4 mt-2 ${darkMode ? '' : ''}`}> 
-                  <button onClick={() => openInNewTab('https://youtu.be/pIG8BH9Z0TI')} className={`text-[0.6rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Preview</button>
-                  <button onClick={() => openInNewTab('https://drive.google.com/file/d/13a0FVE_-NFJc-NRAz2Cq-EBhKa3gevCc/view?usp=share_link')} className={`text-[0.6rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Download</button>
+                  <button onClick={() => openInNewTab('https://react-movie-h8are3rvm-riandikast.vercel.app/')} className={`text-[0.6rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Preview</button>
+                  <button onClick={() => openInNewTab('https://github.com/riandikast/React-Movie-Final.git')} className={`text-[0.6rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Download</button>
                   </div>
                 </div>
 
@@ -273,8 +273,8 @@ function WebsiteProject() {
                   <div className="text-[0.6rem] mt-2">Description:</div>
                   <div className="text-[0.7rem] line-clamp-5">Ecommerce Website that sell fashion things like cloth and bag</div>
                   <div className={`flex flex-row space-x-4 mt-2 ${darkMode ? '' : ''}`}> 
-                  <button onClick={() => openInNewTab('https://youtu.be/pIG8BH9Z0TI')} className={`text-[0.6rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Preview</button>
-                  <button onClick={() => openInNewTab('https://drive.google.com/file/d/13a0FVE_-NFJc-NRAz2Cq-EBhKa3gevCc/view?usp=share_link')} className={`text-[0.6rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Download</button>
+                  <button  onClick={() => openInNewTab('https://react-e-commerce-seven.vercel.app/')} className={`text-[0.6rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Preview</button>
+                  <button onClick={() => openInNewTab('https://github.com/riandikast/React-E-Commerce.git')} className={` text-[0.6rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Download</button>
                   </div>
                 </div>
 
@@ -300,8 +300,8 @@ function WebsiteProject() {
                   <div className="text-[0.6rem] mt-2">Description:</div>
                   <div className="text-[0.7rem] line-clamp-5">a Website Application for selling secondhand motorcyle</div>
                   <div className={`flex flex-row space-x-4 mt-2 ${darkMode ? '' : ''}`}> 
-                  <button onClick={() => openInNewTab('https://youtu.be/pIG8BH9Z0TI')} className={`text-[0.6rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Preview</button>
-                  <button onClick={() => openInNewTab('https://drive.google.com/file/d/13a0FVE_-NFJc-NRAz2Cq-EBhKa3gevCc/view?usp=share_link')} className={`text-[0.6rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Download</button>
+                  <button className={` opacity-40 text-[0.6rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Preview</button>
+                  <button className={` opacity-40 text-[0.6rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Download</button>
                   </div>
                 </div>
 
@@ -325,10 +325,10 @@ function WebsiteProject() {
                   <div className="text-[0.6rem] mt-2">Platform:</div>
                   <div className="text-[0.7rem] line-clamp-1">Website</div>
                   <div className="text-[0.6rem] mt-2">Description:</div>
-                  <div className="text-[0.7rem] line-clamp-5">Simple online shop web application created using Codeigniter as framework</div>
+                  <div className="text-[0.7rem] line-clamp-5">An online shop website created using CodeIgniter as the framework.</div>
                   <div className={`flex flex-row space-x-4 mt-2 ${darkMode ? '' : ''}`}> 
-                  <button onClick={() => openInNewTab('https://youtu.be/pIG8BH9Z0TI')} className={`text-[0.6rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Preview</button>
-                  <button onClick={() => openInNewTab('https://drive.google.com/file/d/13a0FVE_-NFJc-NRAz2Cq-EBhKa3gevCc/view?usp=share_link')} className={`text-[0.6rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Download</button>
+                  <button className={`opacity-40  text-[0.6rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Preview</button>
+                  <button className={`opacity-40  text-[0.6rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Download</button>
                   </div>
                 </div>
 
@@ -352,10 +352,10 @@ function WebsiteProject() {
                   <div className="text-[0.6rem] mt-2">Platform:</div>
                   <div className="text-[0.7rem] line-clamp-1">Website</div>
                   <div className="text-[0.6rem] mt-2">Description:</div>
-                  <div className="text-[0.7rem] line-clamp-5">Simple Website for showing updated News from API</div>
+                  <div className="text-[0.7rem] line-clamp-5">Straightforward Website for showing updated News from API</div>
                   <div className={`flex flex-row space-x-4 mt-2 ${darkMode ? '' : ''}`}> 
-                  <button onClick={() => openInNewTab('https://youtu.be/pIG8BH9Z0TI')} className={`text-[0.6rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Preview</button>
-                  <button onClick={() => openInNewTab('https://drive.google.com/file/d/13a0FVE_-NFJc-NRAz2Cq-EBhKa3gevCc/view?usp=share_link')} className={`text-[0.6rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Download</button>
+                  <button className={`opacity-40 text-[0.6rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Preview</button>
+                  <button onClick={() => openInNewTab('https://github.com/riandikast/final-news.git')} className={` text-[0.6rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Download</button>
                   </div>
                 </div>
 
