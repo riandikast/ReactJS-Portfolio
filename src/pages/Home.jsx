@@ -431,7 +431,11 @@ function Home() {
                   : "text-[#405189] border-[#405189]"
               } font-google text-center text-[0.6rem] font-semibold w-3/5 `}
             >
-              <div className="flex flex-row">
+              <div className="flex flex-row" onClick={() =>
+                    openInNewTab(
+                      "https://mail.google.com/mail/u/0/#inbox?compose=new"
+                    )
+                  }>
                 <a className="flex flex-col text-[3rem]  mr-1">
                   {" "}
                   {darkMode ? (
@@ -444,11 +448,7 @@ function Home() {
                 </a>
                 <div
                   className="flex flex-col text-left mx-auto "
-                  onClick={() =>
-                    openInNewTab(
-                      "https://mail.google.com/mail/u/0/#inbox?compose=new"
-                    )
-                  }
+                  
                 >
                   <div className="flex flex-row mt-[3px]">
                     <h1 className="text-[1rem] ">Email</h1>
@@ -813,6 +813,11 @@ function Home() {
 
           <div className="flex flex-row space-x-8 mb-2">
             <div
+            onClick={() =>
+              openInNewTab(
+                "https://mail.google.com/mail/u/0/#inbox?compose=new"
+              )
+            }
               data-aos="fade-up"
               className={` mb-5   ${
                 darkMode
@@ -822,11 +827,7 @@ function Home() {
             >
               <div
                 className="flex flex-row"
-                onClick={() =>
-                  openInNewTab(
-                    "https://mail.google.com/mail/u/0/#inbox?compose=new"
-                  )
-                }
+                
               >
                 <a className="flex flex-col text-[2.2rem] mr-2">
                   {" "}
