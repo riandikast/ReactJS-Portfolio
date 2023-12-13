@@ -574,7 +574,7 @@ function Home() {
     return (
       <>
         <div className="flex flex-col -mt-4 items-center ">
-          <Element name="home" className="flex flex-row h-72 space-x-8 mt-10">
+          <Element name="home" className="flex flex-row h-72 space-x-8 mt-12">
             <div className="flex flex-col  my-auto">
               <div
                 className={`w-6/6 mb-2 mt-4 line-clamp-1 ${

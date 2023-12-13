@@ -1,6 +1,5 @@
 import Blob from "./Blob";
-import ProfileLight from "../assets/ProfileLightMode.png";
-import ProfileDark from "../assets/ProfileDarkMode.png";
+
 import { ReactComponent as LightPs } from "../assets/darkps.svg";
 import { ReactComponent as DarkPs } from "../assets/lightps.svg";
 import { useAtom } from "jotai";

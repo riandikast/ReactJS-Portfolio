@@ -112,8 +112,10 @@ function MobileProject() {
                   <div className="text-[0.9rem] line-clamp-5">Floating Text Template is a note-taking Android application with a unique feature that
 allows it to float over other apps, making it easier to copy any saved note.</div>
                   <div className={`flex flex-row space-x-4 mt-4 ${darkMode ? '' : ''}`}> 
-                  <button className={` opacity-40  text-[0.9rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Preview</button>
-                  <button className={` opacity-40 text-[0.9rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Download</button>
+                  <button onClick={() => openInNewTab('https://play.google.com/store/apps/details?id=com.sleepydev.floatingtexttemplate')} className={`text-[0.9rem] p-2 rounded-lg  ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Preview</button>
+                  
+                  <button onClick={() => openInNewTab('https://play.google.com/store/apps/details?id=com.sleepydev.floatingtexttemplate')} className={`text-[0.9rem] p-2 rounded-lg  ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Download</button>
+                 
                   </div>
                 </div>
 
@@ -166,7 +168,8 @@ allows it to float over other apps, making it easier to copy any saved note.</di
                   <div className="text-[0.8rem] mt-4">Description:</div>
                   <div className="text-[0.9rem] line-clamp-7">E-Commerce Application that we can buy and sell second products that we used before. This app will bring sellers and buyers to be able to negotiate goods and conduct transactions directly outside the app</div>
                   <div className={`flex flex-row space-x-4 mt-4 ${darkMode ? '' : ''}`}> 
-                  <button className={` opacity-40  text-[0.9rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Preview</button>
+                  <button onClick={() => openInNewTab('https://youtu.be/rtlGFGN3wMs')} className={`text-[0.9rem] p-2 rounded-lg  ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Preview</button>
+                  
                   <button className={` opacity-40 text-[0.9rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Download</button>
                   </div>
                 </div>
@@ -280,6 +283,7 @@ allows it to float over other apps, making it easier to copy any saved note.</di
                   <div className={`flex flex-row space-x-4 mt-2 ${darkMode ? '' : ''}`}> 
                   <button onClick={() => openInNewTab('https://play.google.com/store/apps/details?id=com.sleepydev.bobosa')} className={`text-[0.6rem] p-2 rounded-lg  ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Preview</button>
                   <button onClick={() => openInNewTab('https://play.google.com/store/apps/details?id=com.sleepydev.bobosa')} className={`text-[0.6rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Download</button>
+                 
                   </div>
                 </div>
 
@@ -305,8 +309,10 @@ allows it to float over other apps, making it easier to copy any saved note.</di
                   <div className="text-[0.7rem] line-clamp-7">Floating Text Template is a note-taking Android application with a unique feature that
 allows it to float over other apps, making it easier to copy any saved note.</div>
                   <div className={`flex flex-row space-x-4 mt-2 ${darkMode ? '' : ''}`}> 
-                  <button className={` opacity-40  text-[0.9rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Preview</button>
-                  <button className={` opacity-40 text-[0.9rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Download</button>
+                  <button onClick={() => openInNewTab('https://play.google.com/store/apps/details?id=com.sleepydev.floatingtexttemplate')} className={`text-[0.6rem] p-2 rounded-lg  ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Preview</button>
+                  
+                  <button onClick={() => openInNewTab('https://play.google.com/store/apps/details?id=com.sleepydev.floatingtexttemplate')} className={`text-[0.6rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Download</button>
+                 
                   </div>
                 </div>
 
@@ -359,7 +365,8 @@ allows it to float over other apps, making it easier to copy any saved note.</di
                   <div className="text-[0.6rem] mt-2">Description:</div>
                   <div className="text-[0.7rem] line-clamp-7">E-Commerce Application that we can buy and sell second products that we used before. This app will bring sellers and buyers to be able to negotiate goods and conduct transactions directly outside the app</div>
                   <div className={`flex flex-row space-x-4 mt-2 ${darkMode ? '' : ''}`}> 
-                  <button className={` opacity-40  text-[0.6rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Preview</button>
+                  <button onClick={() => openInNewTab('https://youtu.be/rtlGFGN3wMs')} className={`text-[0.6rem] p-2 rounded-lg  ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Preview</button>
+                  
                   <button className={` opacity-40 text-[0.6rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Download</button>
                   </div>
                 </div>
