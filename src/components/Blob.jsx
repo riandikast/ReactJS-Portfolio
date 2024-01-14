@@ -26,7 +26,7 @@ function Blob({ image, width, height }) {
           transform="translate(100 100)"
         />
 
-      <image xlinkHref={image} x="-8" y="32" height="210" width="210" />
+      <image xlinkHref={image} x="-8" y="42" height="150" width="210" />
       </g>
     </svg>
   );
