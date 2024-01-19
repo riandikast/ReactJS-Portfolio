@@ -63,6 +63,80 @@ function Home() {
     }
   };
 
+  const projectDesktopMode = () => {
+    return (
+      <div className="flex flex-row space-x-12 mb-2">
+        <div
+          data-aos="fade-up"
+          className={` mb-5   ${
+            darkMode
+              ? "text-white  border-white"
+              : "text-[#405189] border-[#405189]"
+          } font-google text-center text-[0.6rem] font-semibold  `}
+        >
+          <div className="flex flex-col ">
+            <a className="flex flex-col text-[2.2rem] ">
+              {" "}
+              <img
+                onClick={() => navigate(`/project/desktop`)}
+                width="100%"
+                src={Desktop}
+                className="p-5 h-32"
+              />
+              <div className="text-[0.8rem] ">Desktop</div>
+            </a>
+          </div>
+        </div>
+
+        <div
+          data-aos="fade-up"
+          className={` mb-5   ${
+            darkMode
+              ? "text-white  border-white"
+              : "text-[#405189] border-[#405189]"
+          } font-google text-center text-[0.6rem] font-semibold  `}
+        >
+          <div className="flex flex-col">
+            <a className="flex flex-col text-[2.2rem] ">
+              {" "}
+              <img
+                onClick={() => navigate(`/project/mobile`)}
+                width="100%"
+                src={Phone}
+                className="p-5 h-32"
+              />
+              <div className="text-[0.8rem] ">Mobile</div>
+            </a>
+          </div>
+        </div>
+
+
+        <div
+          data-aos="fade-up"
+          className={` mb-5   ${
+            darkMode
+              ? "text-white  border-white"
+              : "text-[#405189] border-[#405189]"
+          } font-google text-center text-[0.6rem] font-semibold  `}
+        >
+          <div className="flex flex-col">
+            <a className="flex flex-col text-[2.2rem] ">
+              {" "}
+              <img
+                onClick={() => navigate(`/project/website`)}
+                width="100%"
+                src={Website}
+                className="p-5 h-32 "
+              />
+              <div className="text-[0.8rem] ">Website</div>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    );
+  };
+
   const imageSlider = () => {
     return (
       <>
@@ -231,7 +305,7 @@ function Home() {
             student in Singaperbangsa Karawang University. */}
             <Typewriter
               words={[
-                "Hello, I'm Andika. I have been involved in projects using various programming languages such as Kotlin, JavaScript, Python, and more. Let's take a look at my projects.",
+                "I have been immersing myself in software engineering for 1 year, mainly focusing on Android development. I have already published a couple of Android apps, and there are also several desktop and website projects that I have worked on. Feel free to take a look at my work.",
               ]}
               loop={false}
               cursor
@@ -625,7 +699,7 @@ function Home() {
           >
             <Typewriter
               words={[
-                "Hello, I'm Andika. I have been involved in projects using various programming languages such as Kotlin, JavaScript, Python, and more. Let's take a look at my projects.",
+                "I have been immersing myself in software engineering for 1 year, mainly focusing on Android development. I have already published a couple of Android apps, and there are also several desktop and website projects that I have worked on. Feel free to take a look at my work.",
               ]}
               loop={typeWriterLoop}
               cursor
@@ -795,7 +869,8 @@ function Home() {
           >
             Project
           </Element>
-          {imageSliderDesktop()}
+          {/* {imageSliderDesktop()} */}
+          {projectDesktopMode()}
 
           {/* Contact.........*/}
 

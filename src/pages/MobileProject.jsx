@@ -82,7 +82,7 @@ function MobileProject() {
                   <div className="text-[0.8rem] mt-4">Platform:</div>
                   <div className="text-[0.9rem] line-clamp-1">Android</div>
                   <div className="text-[0.8rem] mt-4">Description:</div>
-                  <div className="text-[0.9rem] line-clamp-4">Bobosa is a Kotlin-built application designed for estimating the body weight of cows.</div>
+                  <div className="text-[0.9rem] text-justify line-clamp-4">Bobosa is a Kotlin-built application designed for estimating the body weight of cows.</div>
                   <div className={`flex flex-row space-x-4 mt-4 ${darkMode ? '' : ''}`}> 
                   <button onClick={() => openInNewTab('https://play.google.com/store/apps/details?id=com.sleepydev.bobosa')} className={`text-[0.9rem] p-2 rounded-lg  ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Preview</button>
                   <button onClick={() => openInNewTab('https://play.google.com/store/apps/details?id=com.sleepydev.bobosa')} className={`text-[0.9rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Download</button>
@@ -109,7 +109,7 @@ function MobileProject() {
                   <div className="text-[0.8rem] mt-4">Platform:</div>
                   <div className="text-[0.9rem] line-clamp-1">Android</div>
                   <div className="text-[0.8rem] mt-4">Description:</div>
-                  <div className="text-[0.9rem] line-clamp-5">Floating Text Template is a note-taking Android application with a unique feature that
+                  <div className="text-[0.9rem] text-justify line-clamp-5">Floating Text Template is a note-taking Android application with a unique feature that
 allows it to float over other apps, making it easier to copy any saved note.</div>
                   <div className={`flex flex-row space-x-4 mt-4 ${darkMode ? '' : ''}`}> 
                   <button onClick={() => openInNewTab('https://play.google.com/store/apps/details?id=com.sleepydev.floatingtexttemplate')} className={`text-[0.9rem] p-2 rounded-lg  ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Preview</button>
@@ -139,7 +139,7 @@ allows it to float over other apps, making it easier to copy any saved note.</di
                   <div className="text-[0.8rem] mt-4">Platform:</div>
                   <div className="text-[0.9rem] line-clamp-1">Android</div>
                   <div className="text-[0.8rem] mt-4">Description:</div>
-                  <div className="text-[0.9rem] line-clamp-4">Simple android application created using kotlin that showing movie data from API with trailer and description</div>
+                  <div className="text-[0.9rem] text-justify line-clamp-4">Simple android application created using kotlin that showing movie data from API with trailer and description</div>
                   <div className={`flex flex-row space-x-4 mt-4 ${darkMode ? '' : ''}`}> 
                   <button className={`opacity-40 text-[0.9rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Preview</button>
                   <button onClick={() => openInNewTab('https://drive.google.com/file/d/1nJVX9V5ZLtDJ6KJI6uq2Gf1blIfoZGgt/view?usp=share_link')} className={` text-[0.9rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Download</button>
@@ -166,7 +166,7 @@ allows it to float over other apps, making it easier to copy any saved note.</di
                   <div className="text-[0.8rem] mt-4">Platform:</div>
                   <div className="text-[0.9rem] line-clamp-1">Android</div>
                   <div className="text-[0.8rem] mt-4">Description:</div>
-                  <div className="text-[0.9rem] line-clamp-7">E-Commerce Application that we can buy and sell second products that we used before. This app will bring sellers and buyers to be able to negotiate goods and conduct transactions directly outside the app</div>
+                  <div className="text-[0.9rem] text-justify line-clamp-7">E-Commerce Application that we can buy and sell second products. This app will bring sellers and buyers to be able to negotiate outside the app</div>
                   <div className={`flex flex-row space-x-4 mt-4 ${darkMode ? '' : ''}`}> 
                   <button onClick={() => openInNewTab('https://youtu.be/rtlGFGN3wMs')} className={`text-[0.9rem] p-2 rounded-lg  ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Preview</button>
                   
@@ -177,7 +177,7 @@ allows it to float over other apps, making it easier to copy any saved note.</di
               </div>
             </Carousel.Item>
 
-            <Carousel.Item>
+            {/* <Carousel.Item>
               <div className="flex flex-row py-2">
               <div className="w-[11rem] ml-auto">
                   <img
@@ -202,7 +202,7 @@ allows it to float over other apps, making it easier to copy any saved note.</di
                 </div>
 
               </div>
-            </Carousel.Item>
+            </Carousel.Item> */}
 
             <Carousel.Item>
               <div className="flex flex-row py-2">
@@ -221,7 +221,7 @@ allows it to float over other apps, making it easier to copy any saved note.</di
                   <div className="text-[0.8rem] mt-4">Platform:</div>
                   <div className="text-[0.9rem] line-clamp-1">Android</div>
                   <div className="text-[0.8rem] mt-4">Description:</div>
-                  <div className="text-[0.9rem] line-clamp-7">This app can help user to booking a hotel</div>
+                  <div className="text-[0.9rem]  text-justify line-clamp-7">This app can help user to booking a hotel</div>
                   <div className={`flex flex-row space-x-4 mt-4 ${darkMode ? '' : ''}`}> 
                   <button onClick={() => openInNewTab('https://youtu.be/lj4HE5IB18M')}  className={` text-[0.9rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Preview</button>
                   <button className={` opacity-40 text-[0.9rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Download</button>
@@ -279,7 +279,7 @@ allows it to float over other apps, making it easier to copy any saved note.</di
                   <div className="text-[0.6rem] mt-2">Platform:</div>
                   <div className="text-[0.7rem] line-clamp-1">Android</div>
                   <div className="text-[0.6rem] mt-2">Description:</div>
-                  <div className="text-[0.7rem] line-clamp-7">Bobosa is a Kotlin-built application designed for estimating the body weight of cows.</div>
+                  <div className="text-[0.7rem] line-clamp-7 text-justify">Bobosa is a Kotlin-built application designed for estimating the body weight of cows.</div>
                   <div className={`flex flex-row space-x-4 mt-2 ${darkMode ? '' : ''}`}> 
                   <button onClick={() => openInNewTab('https://play.google.com/store/apps/details?id=com.sleepydev.bobosa')} className={`text-[0.6rem] p-2 rounded-lg  ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Preview</button>
                   <button onClick={() => openInNewTab('https://play.google.com/store/apps/details?id=com.sleepydev.bobosa')} className={`text-[0.6rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Download</button>
@@ -306,7 +306,7 @@ allows it to float over other apps, making it easier to copy any saved note.</di
                   <div className="text-[0.6rem] mt-2">Platform:</div>
                   <div className="text-[0.7rem] line-clamp-1">Android</div>
                   <div className="text-[0.6rem] mt-2">Description:</div>
-                  <div className="text-[0.7rem] line-clamp-7">Floating Text Template is a note-taking Android application with a unique feature that
+                  <div className="text-[0.7rem] line-clamp-7 text-justify">Floating Text Template is a note-taking Android application with a unique feature that
 allows it to float over other apps, making it easier to copy any saved note.</div>
                   <div className={`flex flex-row space-x-4 mt-2 ${darkMode ? '' : ''}`}> 
                   <button onClick={() => openInNewTab('https://play.google.com/store/apps/details?id=com.sleepydev.floatingtexttemplate')} className={`text-[0.6rem] p-2 rounded-lg  ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Preview</button>
@@ -336,7 +336,7 @@ allows it to float over other apps, making it easier to copy any saved note.</di
                   <div className="text-[0.6rem] mt-2">Platform:</div>
                   <div className="text-[0.7rem] line-clamp-1">Android</div>
                   <div className="text-[0.6rem] mt-2">Description:</div>
-                  <div className="text-[0.7rem] line-clamp-7">Simple android application created using kotlin that showing movie data from API with trailer and description</div>
+                  <div className="text-[0.7rem] line-clamp-7 text-justify">Simple android application created using kotlin that showing movie data from API with trailer and description</div>
                   <div className={`flex flex-row space-x-4 mt-2 ${darkMode ? '' : ''}`}> 
                   <button className={`opacity-40 text-[0.6rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Preview</button>
                   <button onClick={() => openInNewTab('https://drive.google.com/file/d/1nJVX9V5ZLtDJ6KJI6uq2Gf1blIfoZGgt/view?usp=share_link')} className={` text-[0.6rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Download</button>
@@ -363,7 +363,7 @@ allows it to float over other apps, making it easier to copy any saved note.</di
                   <div className="text-[0.6rem] mt-2">Platform:</div>
                   <div className="text-[0.7rem] line-clamp-1">Android</div>
                   <div className="text-[0.6rem] mt-2">Description:</div>
-                  <div className="text-[0.7rem] line-clamp-7">E-Commerce Application that we can buy and sell second products that we used before. This app will bring sellers and buyers to be able to negotiate goods and conduct transactions directly outside the app</div>
+                  <div className="text-[0.7rem] line-clamp-7 text-justify">E-Commerce Application that we can buy and sell second products. This app will bring sellers and buyers to be able to negotiate outside the app</div>
                   <div className={`flex flex-row space-x-4 mt-2 ${darkMode ? '' : ''}`}> 
                   <button onClick={() => openInNewTab('https://youtu.be/rtlGFGN3wMs')} className={`text-[0.6rem] p-2 rounded-lg  ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Preview</button>
                   
@@ -374,7 +374,7 @@ allows it to float over other apps, making it easier to copy any saved note.</di
               </div>
             </Carousel.Item>
 
-            <Carousel.Item>
+            {/* <Carousel.Item>
               <div className="flex flex-col px-3 mt-60  mx-auto w-[14rem] ">
                 <div>
                   <img
@@ -399,7 +399,7 @@ allows it to float over other apps, making it easier to copy any saved note.</di
                 </div>
 
               </div>
-            </Carousel.Item>
+            </Carousel.Item> */}
 
             <Carousel.Item>
               <div className="flex flex-col px-3 mt-60  mx-auto w-[14rem] ">
@@ -418,7 +418,7 @@ allows it to float over other apps, making it easier to copy any saved note.</di
                   <div className="text-[0.6rem] mt-2">Platform:</div>
                   <div className="text-[0.7rem] line-clamp-1">Android</div>
                   <div className="text-[0.6rem] mt-2">Description:</div>
-                  <div className="text-[0.7rem] line-clamp-7">This app can help user to booking a hotel</div>
+                  <div className="text-[0.7rem] line-clamp-7 text-justify">This app can help user to booking a hotel</div>
                   <div className={`flex flex-row space-x-4 mt-2 ${darkMode ? '' : ''}`}> 
                   <button onClick={() => openInNewTab('https://youtu.be/lj4HE5IB18M')}  className={` text-[0.6rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Preview</button>
                   <button className={` opacity-40 text-[0.6rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Download</button>
