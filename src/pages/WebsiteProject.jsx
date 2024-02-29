@@ -66,7 +66,7 @@ function WebsiteProject() {
       <>
         {console.log("las", showNav)}
         <div
-          className={`flex flex-col mb-20 w-5/6 min501:w-4/6 z-0   ${
+          className={`flex flex-col h-screen w-6/6 mx-4 min501:w-4/6 z-0   ${
             darkMode ? "text-white" : "text-[#405189]"
           }`}
         >
@@ -154,7 +154,7 @@ function WebsiteProject() {
   const desktopMode = () => {
     return (
       <>
-        <div className={`flex flex-col items-center`}>
+        <div className={`flex flex-col items-center h-screen `}>
           {imageSliderDesktop()}
         </div>
       </>
@@ -167,7 +167,7 @@ function WebsiteProject() {
       <motion.div
         className={`${
           darkMode ? "bg-[#0d1117] " : "bg-[#f3f3f9]"
-        } h-screens flex flex-col mt-32 min501:mt-12`}
+        }  flex flex-col  `}
         initial="initial"
         animate="in"
         exit="out"
@@ -175,7 +175,7 @@ function WebsiteProject() {
         variants={pageVariants}
       >
         <div
-          className={`flex  flex-col mb-2 mx-auto w-5/6 z-0 text-[1.3rem] min501:text-[1.5rem]  min501:mt-4 ${
+          className={`flex  flex-col mb-2 mx-auto mt-32 min501:mt-12 w-5/6 z-0 text-[1.3rem] min501:text-[1.5rem]  min501:mt-4 ${
             darkMode ? "text-white" : "text-[#405189]"
           }`}
         >

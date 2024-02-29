@@ -33,7 +33,7 @@ function App() {
           <div className="w-screen top-0 fixed z-10 " >
             <Navbar />
           </div>
-          <div className={`absolute justify-center items-center w-full h-full ${darkMode? 'bg-[#0d1117]' : 'bg-[#f3f3f9]'}`} onClick={()=> setShowNav(false)}>
+          <div className={`relative justify-center items-center w-full h-full ${darkMode? 'bg-[#0d1117]' : 'bg-[#f3f3f9]'}`} onClick={()=> setShowNav(false)}>
             <AnimatedRoutes></AnimatedRoutes>
           </div>
         </Router>

@@ -63,7 +63,7 @@ function DesktopProject() {
       <>
         {console.log("las", showNav)}
         <div
-          className={`flex flex-col mb-20 w-11/12 min501:w-4/6  z-0     ${
+          className={`flex flex-col h-screen w-11/12 min501:w-4/6  z-0     ${
             darkMode ? "text-white" : "text-[#405189]"
           }`}
         >
@@ -141,7 +141,7 @@ function DesktopProject() {
       <motion.div
         className={` ${
           darkMode ? "bg-[#0d1117] " : "bg-[#f3f3f9]"
-        } h-screens flex flex-col mt-32 min501:mt-12`}
+        }  flex flex-col  `}
         initial="initial"
         animate="in"
         exit="out"
@@ -149,7 +149,7 @@ function DesktopProject() {
         variants={pageVariants}
       >
         <div
-          className={`flex  flex-col mb-2 mx-auto w-5/6 z-0 text-[1.3rem] min501:text-[1.5rem]  min501:mt-4 ${
+          className={`flex  flex-col mb-2 mx-auto w-5/6 z-0 mt-32 min501:mt-12 text-[1.3rem] min501:text-[1.5rem]  ${
             darkMode ? "text-white" : "text-[#405189]"
           }`}
         >

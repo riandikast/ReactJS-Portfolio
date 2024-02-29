@@ -21,13 +21,13 @@ function Popup({ image, name, desc, platform, link1, link2, cancel, video, demo,
             <img
               width="10%"
               src={Cancel}
-              className="w-[2rem] m-6 ml-auto"
+              className="w-[2rem] m-6 ml-auto mt-16"
               onClick={cancel}
             ></img>
           
               <YouTube
                 videoId={`${image}`}
-                iframeClassName={` ${video? "w-4/6 min501:w-4/6 mx-auto h-[7rem] min501:h-[15rem]": "hidden" }`}
+                iframeClassName={` ${video? "w-4/6 min501:w-4/6 mx-auto h-[50%] min501:h-[15rem]": "hidden" }`}
               />
          
               <img

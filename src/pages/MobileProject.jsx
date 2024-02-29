@@ -213,7 +213,7 @@ function MobileProject() {
       <motion.div
         className={`${
           darkMode ? "bg-[#0d1117] " : "bg-[#f3f3f9]"
-        } h-screens flex flex-col mt-12 min501:mt-12`}
+        } flex flex-col `}
         initial="initial"
         animate="in"
         exit="out"
@@ -221,7 +221,7 @@ function MobileProject() {
         variants={pageVariants}
       >
         <div
-          className={`flex  flex-col mb-2 mx-auto w-5/6 z-0 text-[1.3rem] -mb-12 min501:text-[1.5rem]  min501:mt-4  ${
+          className={`flex  flex-col mb-2 mx-auto w-5/6 mt-32 min501:mt-12 z-0 text-[1.3rem] -mb-12 min501:text-[1.5rem]  min501:mt-4  ${
             darkMode ? "text-white" : "text-[#405189]"
           }`}
         >
@@ -241,7 +241,7 @@ function MobileProject() {
               demo={false}
               cancel={() => setIsPopup(false)}
               mobileProject={
-                "h-[11rem] min501:h-[15rem] w-4/6 min501:w-[45%] px-8 "
+                "h-[11rem] min501:h-[15rem] w-3/6 min501:w-[45%] px-8  "
               }
               mobileProjectBg={"min501:w-2/6 "}
             />
