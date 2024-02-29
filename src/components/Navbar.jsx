@@ -44,6 +44,9 @@ function Navbar() {
     setShowMenu(true);
   };
 
+  var maxScroll = Math.max( document.body.scrollHeight, document.body.offsetHeight, 
+    document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight ) - window.innerHeight;
+  
   const themeIcon = () => {
     if (darkMode) {
       return (
@@ -80,60 +83,51 @@ function Navbar() {
     setShowNav(false);
     setNavTransition("home");
 
-    scroller.scrollTo("home", {
-      smooth: true,
-      spy: true,
-      duration: 700,
-      offset: -100,
-    });
+    window.scrollTo({ 
+      top: maxScroll * 0, 
+      behavior: "smooth" ,  
+    })
 
     if (path === "/") {
-      if (scrollPosition <= 205) {
+      if (scrollPosition <= maxScroll * 0.13) {
         setNavTransition(0);
       }
     } else {
       setNavTransition(0);
+      setNavDelay(1);
+      setTimeout(() => {
+        setNavDelay(0);
+      }, 700);
     }
+
   };
 
   const scrollToAbout = () => {
     setShowNav(false);
+    setNavTransition("about");
 
     let positionOffset = 0;
-    if (scrollPosition <= 205) {
-      positionOffset = -260;
+    if (scrollPosition <= maxScroll * 0.13 ) {
+      positionOffset = -maxScroll * 0.35;
     } else {
-      positionOffset = -170;
+      positionOffset = -maxScroll * 0.15;
     }
-    setNavTransition("about");
-    if (scrollPosition > 205 && scrollPosition <= 680) {
-      setNavTransition(0);
-    }
-    if (path === "/") {
-      if (scrollPosition > 680 && scrollPosition <= 1075) {
-        setNavTransition(0);
-      }
-      scroller.scrollTo("about", {
-        smooth: true,
-        spy: true,
-        duration: 700,
-        offset: positionOffset,
-      });
+    
+      if (path === "/") {
+        window.scrollTo({ 
+          top: maxScroll * 0.20, 
+          behavior: "smooth" ,  
+        })
     } else {
       setNavDelay(1);
       setTimeout(() => {
-        window.scrollTo({
-          top: 420,
-          behavior: "smooth",
-        });
+        window.scrollTo({ 
+          top: maxScroll * 0.20, 
+          behavior: "smooth" ,  
+        })
 
-        setTimeout(() => {
-          window.scrollTo({
-            top: 420,
-            behavior: "smooth",
-          });
-        }, 100);
-      }, 350);
+       
+      }, 400);
 
       setTimeout(() => {
         setNavDelay(0);
@@ -143,38 +137,30 @@ function Navbar() {
 
   const scrollToSkills = () => {
     setShowNav(false);
-    let positionOffset = 0;
-    if (scrollPosition <= 680) {
-      positionOffset = -260;
-    } else {
-      positionOffset = -170;
-    }
     setNavTransition("skills");
-    if (scrollPosition > 680 && scrollPosition <= 1075) {
-      setNavTransition(0);
+
+    let positionOffset = 0;
+    if (scrollPosition <= maxScroll * 0.38) {
+      positionOffset = -maxScroll * 0.28;
+    } else {
+      positionOffset = -maxScroll * 0.13;
     }
+   
     if (path === "/") {
-      scroller.scrollTo("skills", {
-        smooth: true,
-        spy: true,
-        duration: 700,
-        offset: positionOffset,
-      });
+      window.scrollTo({ 
+        top: maxScroll * 0.48, 
+        behavior: "smooth" ,  
+      })
     } else {
       setNavDelay(1);
       setTimeout(() => {
-        window.scrollTo({
-          top: 800,
-          behavior: "smooth",
-        });
+        window.scrollTo({ 
+          top: maxScroll * 0.48, 
+          behavior: "smooth" ,  
+        })
 
-        setTimeout(() => {
-          window.scrollTo({
-            top: 800,
-            behavior: "smooth",
-          });
-        }, 100);
-      }, 350);
+       
+      }, 400);
 
       setTimeout(() => {
         setNavDelay(0);
@@ -184,39 +170,51 @@ function Navbar() {
 
   const scrollToProject = () => {
     setShowNav(false);
-    let positionOffset = 0;
-    if (scrollPosition <= 1075) {
-      positionOffset = -220;
-    } else {
-      positionOffset = -130;
-    }
     setNavTransition("project");
-    if (scrollPosition > 1075 && scrollPosition <= 1550) {
+    setTimeout(() => {
       setNavTransition(0);
+
+     
+    }, 1000);
+    let positionOffset = 0;
+
+    if (scrollPosition <= maxScroll * 0.65 ) {
+      positionOffset = -maxScroll * 0.19;
+    } else {
+      positionOffset = -maxScroll * 0.13;
     }
+   
     if (path === "/") {
-      scroller.scrollTo("project", {
-        smooth: true,
-        spy: true,
-        duration: 700,
-        offset: positionOffset,
-      });
+      // scroller.scrollTo("project", {
+      //   smooth: true,
+      //   spy: true,
+      //   duration: 700,
+      //   offset: positionOffset,
+      // });
+      window.scrollTo({ 
+        top: maxScroll * 0.76, 
+        behavior: "smooth" ,  
+      })
+      
     } else {
       setNavDelay(1);
+      setTimeout(() => {
+        window.scrollTo({ 
+          top: maxScroll * 0.76, 
+          behavior: "smooth" ,  
+        })
+
+       
+      }, 400);
 
       setTimeout(() => {
-        window.scrollTo({
-          top: 1220,
-          behavior: "smooth",
-        });
+        window.scrollTo({ 
+          top: maxScroll * 0.76, 
+          behavior: "smooth" ,  
+        })
 
-        setTimeout(() => {
-          window.scrollTo({
-            top: 1220,
-            behavior: "smooth",
-          });
-        }, 100);
-      }, 350);
+       
+      }, 500);
 
       setTimeout(() => {
         setNavDelay(0);
@@ -227,30 +225,33 @@ function Navbar() {
   const scrollToContact = () => {
     setShowNav(false);
     setNavTransition("contact");
-    if (scrollPosition > 1550) {
+    if (scrollPosition > maxScroll * 0.87) {
       setNavTransition(0);
     }
+
     if (path === "/") {
-      scroller.scrollTo("contact", {
-        smooth: true,
-        spy: true,
-        duration: 700,
-      });
+      window.scrollTo({ 
+        top: maxScroll * 1, 
+        behavior: "smooth" ,  
+      })
     } else {
       setNavDelay(1);
       setTimeout(() => {
-        window.scrollTo({
-          top: 1600,
-          behavior: "smooth",
-        });
+         window.scrollTo({ 
+        top: maxScroll * 1, 
+        behavior: "smooth" ,  
+      })
 
-        setTimeout(() => {
-          window.scrollTo({
-            top: 1600,
-            behavior: "smooth",
-          });
-        }, 150);
-      }, 350);
+       
+      }, 400);
+      setTimeout(() => {
+        window.scrollTo({ 
+       top: maxScroll * 1, 
+       behavior: "smooth" ,  
+     })
+
+      
+     }, 500);
 
       setTimeout(() => {
         setNavDelay(0);
@@ -258,195 +259,43 @@ function Navbar() {
     }
   };
 
-  const scrollToHomeMobile = () => {
-    setShowNav(false);
-    setNavTransition("home");
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-
-    if (path === "/") {
-      setNavTransition(0);
-    } else {
-      setNavTransition(0);
-    }
-  };
-
-  const scrollToAboutMobile = () => {
-    setShowNav(false);
-    setNavTransition("about");
-
-    if (path === "/") {
-      window.scrollTo({
-        top: 321,
-        behavior: "smooth",
-      });
-    } else {
-      setNavDelay(1);
-      setTimeout(() => {
-        window.scrollTo({
-          top: 321,
-          behavior: "smooth",
-        });
-
-        setTimeout(() => {
-          window.scrollTo({
-            top: 321,
-            behavior: "smooth",
-          });
-        }, 100);
-      }, 350);
-
-      setTimeout(() => {
-        setNavDelay(0);
-      }, 700);
-    }
-  };
-  const scrollToSkillsMobile = () => {
-    setShowNav(false);
-    setNavTransition("skills");
-    if (path === "/") {
-      window.scrollTo({
-        top: 701,
-        behavior: "smooth",
-      });
-    } else {
-      setNavDelay(1);
-      setTimeout(() => {
-        window.scrollTo({
-          top: 701,
-          behavior: "smooth",
-        });
-
-        setTimeout(() => {
-          window.scrollTo({
-            top: 701,
-            behavior: "smooth",
-          });
-        }, 100);
-      }, 350);
-
-      setTimeout(() => {
-        setNavDelay(0);
-      }, 700);
-    }
-  };
-
-  const scrollToProjectMobile = () => {
-    setShowNav(false);
-    setNavTransition("project");
-    if (path === "/") {
-      window.scrollTo({
-        top: 1201,
-        behavior: "smooth",
-      });
-    } else {
-      setNavDelay(1);
-      setTimeout(() => {
-        window.scrollTo({
-          top: 1201,
-          behavior: "smooth",
-        });
-
-        setTimeout(() => {
-          window.scrollTo({
-            top: 1201,
-            behavior: "smooth",
-          });
-        }, 100);
-      }, 350);
-
-      setTimeout(() => {
-        setNavDelay(0);
-      }, 700);
-    }
-  };
-
-  const scrollToContactMobile = () => {
-    setShowNav(false);
-    setNavTransition("contact");
-    if (path === "/") {
-      window.scrollTo({
-        top: 1500,
-        behavior: "smooth",
-      });
-    } else {
-      setNavDelay(1);
-      setTimeout(() => {
-        window.scrollTo({
-          top: 1500,
-          behavior: "smooth",
-        });
-
-        setTimeout(() => {
-          window.scrollTo({
-            top: 1500,
-            behavior: "smooth",
-          });
-        }, 150);
-      }, 350);
-
-      setTimeout(() => {
-        setNavDelay(0);
-      }, 700);
-    }
-  };
+ 
 
   useEffect(() => {
     setPath(location.pathname);
   }, [location]);
 
-  const screenWidth = window.innerWidth;
+ 
   useEffect(() => {
-    console.log("www", screenWidth);
-    if (screenWidth >= 500) {
+    console.log("InctiveNavbarStatus", navTransition);
+    
       if (navTransition === "home") {
-        if (scrollPosition <= 205) {
+        if (scrollPosition <= maxScroll * 0.13) {
           setNavTransition(0);
         }
       } else if (navTransition === "about") {
-        if (scrollPosition > 205 && scrollPosition <= 680) {
+        if (scrollPosition > maxScroll * 0.13 && scrollPosition <= maxScroll * 0.38) {
           setNavTransition(0);
         }
       } else if (navTransition === "skills") {
-        if (scrollPosition > 680 && scrollPosition <= 1075) {
+        if (scrollPosition > maxScroll * 0.38 && scrollPosition <= maxScroll * 0.65) {
           setNavTransition(0);
         }
       } else if (navTransition === "project") {
-        if (scrollPosition > 1075 && scrollPosition <= 1550) {
+        if (scrollPosition > maxScroll * 0.65 && scrollPosition <= maxScroll * 0.87) {
           setNavTransition(0);
+     
         }
       } else if (navTransition === "contact") {
-        if (scrollPosition > 1550) {
+        if (scrollPosition > maxScroll * 0.87) {
           setNavTransition(0);
         }
       }
-    } else {
-      if (navTransition === "home") {
-        if (scrollPosition <= 320) {
-          setNavTransition(0);
-        }
-      } else if (navTransition === "about") {
-        if (scrollPosition > 320 && scrollPosition <= 700) {
-          setNavTransition(0);
-        }
-      } else if (navTransition === "skills") {
-        if (scrollPosition > 700 && scrollPosition <= 1100) {
-          setNavTransition(0);
-        }
-      } else if (navTransition === "project") {
-        if (scrollPosition > 1100 && scrollPosition <= 1370) {
-          setNavTransition(0);
-        }
-      } else if (navTransition === "contact") {
-        if (scrollPosition > 1370) {
-          setNavTransition(0);
-        }
-      }
-    }
+
+   
+    
     console.log(scrollPosition);
-  }, [scrollPosition]);
+  }, [scrollPosition, location, navTransition]);
 
   const mobileNavbar = () => {
     return (
@@ -488,14 +337,15 @@ function Navbar() {
           <NavLink
             to={path === "/" ? "" : "/"}
             className={
-              scrollPosition <= 205 &&
+              
+              window.scrollY  <= maxScroll * 0.13 &&
               path === "/" &&
               navDelay !== 1 &&
               navTransition === 0
-                ? ` text-sm md:text-base mr-4 mt-6 border-b-2  ${
+                ? ` text-sm md:text-lg mr-4 mt-6 border-b-2  ${
                     darkMode ? "border-white" : "border-[#405189]"
                   } `
-                : " text-sm md:text-base mr-4 mt-6  "
+                : " text-sm md:text-lg mr-4 mt-6  "
             }
             onClick={scrollToHome}
           >
@@ -505,14 +355,14 @@ function Navbar() {
           <NavLink
             to={path === "/" ? "" : "/"}
             className={
-              scrollPosition > 205 &&
-              scrollPosition <= 680 &&
+              window.scrollY  > maxScroll * 0.13 && 
+              window.scrollY  <= maxScroll * 0.38 &&
               path === "/" &&
               navTransition === 0
-                ? `text-sm md:text-base mr-4 mt-6 border-b-2  ${
+                ? `text-sm md:text-lg mr-4 mt-6 border-b-2  ${
                     darkMode ? "border-white" : "border-[#405189]"
                   } `
-                : " text-sm md:text-base mr-4 mt-6"
+                : " text-sm md:text-lg mr-4 mt-6"
             }
             onClick={scrollToAbout}
           >
@@ -522,14 +372,14 @@ function Navbar() {
           <NavLink
             to={path === "/" ? "" : "/"}
             className={
-              scrollPosition > 680 &&
-              scrollPosition <= 1075 &&
+              window.scrollY  > maxScroll * 0.38 && 
+              window.scrollY  <= maxScroll * 0.65 &&
               path === "/" &&
               navTransition === 0
-                ? `text-sm md:text-base mr-4 mt-6 border-b-2  ${
+                ? `text-sm md:text-lg mr-4 mt-6 border-b-2  ${
                     darkMode ? "border-white" : "border-[#405189]"
                   } `
-                : " text-sm md:text-base mr-4 mt-6"
+                : " text-sm md:text-lg mr-4 mt-6"
             }
             onClick={scrollToSkills}
           >
@@ -539,20 +389,20 @@ function Navbar() {
           <NavLink
             to={path === "/" ? "" : "/"}
             className={
-              scrollPosition > 1075 &&
-              scrollPosition <= 1550 &&
+              window.scrollY  > maxScroll * 0.65 && 
+              window.scrollY  <= maxScroll * 0.87 &&
               path === "/" &&
               navTransition === 0
-                ? `text-sm md:text-base mr-4 mt-6 border-b-2  ${
+                ? `text-sm md:text-lg mr-4 mt-6 border-b-2  ${
                     darkMode ? "border-white" : "border-[#405189]"
                   } `
                 : path === "/project/desktop" ||
                   path === "/project/website" ||
                   path === "/project/mobile"
-                ? `text-sm md:text-base mr-4 mt-6 border-b-2  ${
+                ? `text-sm md:text-lg mr-4 mt-6 border-b-2  ${
                     darkMode ? "border-white" : "border-[#405189]"
                   } `
-                : " text-sm md:text-base mr-4 mt-6"
+                : " text-sm md:text-lg mr-4 mt-6"
             }
             onClick={scrollToProject}
           >
@@ -562,11 +412,12 @@ function Navbar() {
           <NavLink
             to={path === "/" ? "" : "/"}
             className={
-              scrollPosition > 1550 && path === "/" && navTransition === 0
-                ? `text-sm md:text-base mr-4 mt-6 border-b-2  ${
+              window.scrollY  > maxScroll * 0.87 &&
+              path === "/" && navTransition === 0
+                ? `text-sm md:text-lg mr-4 mt-6 border-b-2  ${
                     darkMode ? "border-white" : "border-[#405189]"
                   } `
-                : " text-sm md:text-base mr-4 mt-6"
+                : " text-sm md:text-lg mr-4 mt-6"
             }
             onClick={scrollToContact}
           >
@@ -595,7 +446,7 @@ function Navbar() {
           variants={pageVariants}
           className={`${
             darkMode ? "bg-[#394c5d]" : "bg-[#405189]"
-          }  text-[#c4c6c9] space-y-5 flex flex-col text-center fixed h-screen top-8 text-left ml-3 w-4/6 max-w-[8rem] rounded-lg shadow-lg p-6`}
+          }  text-[#c4c6c9] space-y-5 flex flex-col text-center fixed h-screen top-8 text-left ml-3 w-4/6 max-w-[7rem] rounded-lg shadow-lg p-6`}
         >
           <button
             className=" w-5 h-5 ml-auto relative bottom-2 left-2"
@@ -604,20 +455,21 @@ function Navbar() {
             <CloseButton />
           </button>
 
-          <div className="relative bottom-5 flex flex-col">
+          <div className="relative bottom-5 flex flex-col  ">
           <NavLink
             to={path === "/" ? "" : "/"}
-            className={ 
-              scrollPosition <= 320 &&
+            className={
+              
+              window.scrollY  <= maxScroll * 0.13 &&
               path === "/" &&
               navDelay !== 1 &&
               navTransition === 0
-                ? ` text-[1.1rem] mr-4  ${
-                    darkMode ? "text-[#ffffff]" : "text-[#ffffff]"
+                ? ` text-sm md:text-lg mr-4 mt-6 border-b-2 max-w-fit  ${
+                    darkMode ? "border-white" : "border-white min501:border-[#405189]"
                   } `
-                : " text-[1.1rem] md:text-base mr-4  " 
+                : " text-sm md:text-lg mr-4 mt-6 max-w-fit "
             }
-            onClick={scrollToHomeMobile}
+            onClick={scrollToHome}
           >
             Home
           </NavLink>
@@ -625,16 +477,16 @@ function Navbar() {
           <NavLink
             to={path === "/" ? "" : "/"}
             className={
-              scrollPosition > 320 &&
-              scrollPosition <= 700 &&
+              window.scrollY  > maxScroll * 0.13 && 
+              window.scrollY  <= maxScroll * 0.38 &&
               path === "/" &&
               navTransition === 0
-                ? `text-[1.1rem] mr-4 mt-4   ${
-                    darkMode ? "text-[#ffffff]" : "text-[#ffffff]"
+                ? `text-sm md:text-lg mr-4 mt-6 border-b-2 max-w-fit ${
+                    darkMode ? "border-white" : "border-white min501:border-[#405189]"
                   } `
-                : "text-[1.1rem] mr-4 mt-4"
+                : " text-sm md:text-lg mr-4 mt-6 max-w-fit"
             }
-            onClick={scrollToAboutMobile}
+            onClick={scrollToAbout}
           >
             About
           </NavLink>
@@ -642,16 +494,16 @@ function Navbar() {
           <NavLink
             to={path === "/" ? "" : "/"}
             className={
-              scrollPosition > 700 &&
-              scrollPosition <= 1100 &&
+              window.scrollY  > maxScroll * 0.38 && 
+              window.scrollY  <= maxScroll * 0.65 &&
               path === "/" &&
               navTransition === 0
-                ? `text-[1.1rem] mr-4 mt-4   ${
-                    darkMode ? "text-[#ffffff]" : "text-[#ffffff]"
+                ? `text-sm md:text-lg mr-4 mt-6 border-b-2 max-w-fit  ${
+                    darkMode ? "border-white" : "border-white min501:border-[#405189]"
                   } `
-                : "text-[1.1rem] mr-4 mt-4"
+                : " text-sm md:text-lg mr-4 mt-6 max-w-fit"
             }
-            onClick={scrollToSkillsMobile}
+            onClick={scrollToSkills}
           >
             Skills
           </NavLink>
@@ -659,22 +511,22 @@ function Navbar() {
           <NavLink
             to={path === "/" ? "" : "/"}
             className={
-              scrollPosition > 1100 &&
-              scrollPosition <= 1370 &&
+              window.scrollY  > maxScroll * 0.65 && 
+              window.scrollY  <= maxScroll * 0.87 &&
               path === "/" &&
               navTransition === 0
-                ? `text-[1.1rem] mr-4 mt-4  ${
-                    darkMode ? "text-[#ffffff]" : "text-[#ffffff]"
+                ? `text-sm md:text-lg mr-4 mt-6 border-b-2 max-w-fit ${
+                    darkMode ? "border-white" : "border-white min501:border-[#405189]"
                   } `
                 : path === "/project/desktop" ||
                   path === "/project/website" ||
                   path === "/project/mobile"
-                ? `text-[1.1rem] mr-4 mt-4  ${
-                    darkMode ? "text-[#ffffff]" : "text-[#ffffff]"
+                ? `text-sm md:text-lg mr-4 mt-6 border-b-2 max-w-fit ${
+                    darkMode ? "border-white" : "border-white min501:border-[#405189]"
                   } `
-                : "text-[1.1rem] mr-4 mt-4"
+                : " text-sm md:text-lg mr-4 mt-6 max-w-fit"
             }
-            onClick={scrollToProjectMobile}
+            onClick={scrollToProject}
           >
             Project
           </NavLink>
@@ -682,13 +534,14 @@ function Navbar() {
           <NavLink
             to={path === "/" ? "" : "/"}
             className={
-              scrollPosition > 1370 && path === "/" && navTransition === 0
-                ? `text-[1.1rem] mr-4 mt-4  ${
-                    darkMode ? "text-[#ffffff]" : "text-[#ffffff]"
+              window.scrollY  > maxScroll * 0.87 &&
+              path === "/" && navTransition === 0
+                ? `text-sm md:text-lg mr-4 mt-6 border-b-2 max-w-fit ${
+                    darkMode ? "border-white" : "border-white min501:border-[#405189]"
                   } `
-                : "text-[1.1rem] mr-4 mt-4"
+                : " text-sm md:text-lg mr-4 mt-6 max-w-fit"
             }
-            onClick={scrollToContactMobile}
+            onClick={scrollToContact}
           >
             Contact
           </NavLink>

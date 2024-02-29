@@ -30,6 +30,7 @@ import Carousel from "better-react-carousel";
 import { Typewriter } from "react-simple-typewriter";
 import { useScrollPosition } from "../customHooks/useScrollPosition";
 import { useAtom, atom } from "jotai";
+import { ToastContainer, toast } from "react-toastify";
 import { Element } from "react-scroll";
 import { useNavigate } from "react-router-dom";
 
@@ -50,6 +51,25 @@ function Home() {
   const [showNav, setShowNav] = useAtom(showNavState);
 
   const scrollPosition = useScrollPosition();
+ 
+  
+  const showToastMessage = () => {
+    toast.success(`${scrollPosition}`, {
+      position: toast.POSITION.TOP_RIGHT,
+    });
+  };
+  
+  var maxScroll = Math.max( document.body.scrollHeight, document.body.offsetHeight, 
+    document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight ) - window.innerHeight;
+  
+    useEffect(() => {
+    console.log("Scroll Post", window.innerHeight)
+
+    console.log("Win Scroll Y", window.scrollY)
+
+    console.log("Win inner height", maxScroll)
+  }, [scrollPosition]);
+  
   console.log("a", scrollPosition);
   const openInNewTab = (url) => {
     const newWindow = window.open(url, "_blank", "noopener,noreferrer");
@@ -81,31 +101,9 @@ function Home() {
                 onClick={() => navigate(`/project/desktop`)}
                 width="100%"
                 src={Desktop}
-                className="p-5 h-32"
+                className="p-5 h-44"
               />
-              <div className="text-[0.8rem] ">Desktop</div>
-            </a>
-          </div>
-        </div>
-
-        <div
-          data-aos="fade-up"
-          className={` mb-5   ${
-            darkMode
-              ? "text-white  border-white"
-              : "text-[#405189] border-[#405189]"
-          } font-google text-center text-[0.6rem] font-semibold  `}
-        >
-          <div className="flex flex-col">
-            <a className="flex flex-col text-[2.2rem] ">
-              {" "}
-              <img
-                onClick={() => navigate(`/project/mobile`)}
-                width="100%"
-                src={Phone}
-                className="p-5 h-32"
-              />
-              <div className="text-[0.8rem] ">Mobile</div>
+              <div className="text-[1.2rem] ">Desktop</div>
             </a>
           </div>
         </div>
@@ -126,12 +124,37 @@ function Home() {
                 onClick={() => navigate(`/project/website`)}
                 width="100%"
                 src={Website}
-                className="p-5 h-32 "
+                className="p-5 h-44 "
               />
-              <div className="text-[0.8rem] ">Website</div>
+              <div className="text-[1.2rem] ">Website</div>
             </a>
           </div>
         </div>
+
+        <div
+          data-aos="fade-up"
+          className={` mb-5   ${
+            darkMode
+              ? "text-white  border-white"
+              : "text-[#405189] border-[#405189]"
+          } font-google text-center text-[0.6rem] font-semibold  `}
+        >
+          <div className="flex flex-col">
+            <a className="flex flex-col text-[2.2rem] ">
+              {" "}
+              <img
+                onClick={() => navigate(`/project/mobile`)}
+                width="100%"
+                src={Phone}
+                className="p-5 h-44"
+              />
+              <div className="text-[1.2rem] ">Mobile</div>
+            </a>
+          </div>
+        </div>
+
+
+        
 
       </div>
     );
@@ -193,68 +216,11 @@ function Home() {
     );
   };
 
-  const imageSliderDesktop = () => {
-    return (
-      <>
-        {console.log("las", showNav)}
-        <div
-          className={`flex flex-col mb-20 w-60  z-0    ${
-            darkMode ? "text-white" : "text-[#405189]"
-          }`}
-        >
-          <Carousel
-            cols={1}
-            rows={1}
-            gap={10}
-            loop={true}
-            hideArrow={showNav ? true : false}
-            mobileBreakpoint={100}
-            dotColorInactive={darkMode ? "#405189" : "#a8a8a8"}
-            dotColorActive={darkMode ? "#f8fafc" : "#405189"}
-            showDots={true}
-            autoplay={3000}
-          >
-            <Carousel.Item>
-              <img
-                onClick={() => navigate(`/project/desktop`)}
-                width="100%"
-                src={Desktop}
-                className="p-5 "
-              />
-              <div className="text-[0.8rem] ">Desktop</div>
-            </Carousel.Item>
-
-            <Carousel.Item>
-              <img
-                onClick={() => navigate("/project/website")}
-                width="100%"
-                src={Website}
-                className="p-5"
-              />
-              <div className="text-[0.8rem] ">Website</div>
-            </Carousel.Item>
-
-            <Carousel.Item>
-              <img
-                onClick={() => navigate("/project/mobile")}
-                width="100%"
-                src={Phone}
-                className="p-5"
-              />
-              <div className="text-[0.8rem] ">Mobile</div>
-            </Carousel.Item>
-
-          
-          </Carousel>
-        </div>
-      </>
-    );
-  };
 
   const mobileMode = () => {
     return (
       <>
-        <div className="flex flex-col -mt-4 items-center">
+        <div className="flex flex-col mt-8 items-center">
           <div className="justify-center flex flex-col items-center mt-3 w-[70%]">
             <Avatar width={"w-4/5"} height={"h-35"} />
           </div>
@@ -299,10 +265,6 @@ function Home() {
               scrollPosition > 700 ? "hidden" : ""
             } font-google text-justify text-[0.75rem] font-semibold  `}
           >
-            {/* Hello I'm Andika, Passionate on Android, website and Game
-            development I have been involved in project with some language like
-            Kotlin, Javascript, Python, Etc. Currently I serve as college
-            student in Singaperbangsa Karawang University. */}
             <Typewriter
               words={[
                 "I have been immersing myself in software engineering for 1 year, mainly focusing on Android development. I have already published a couple of Android apps, and there are also several desktop and website projects that I have worked on. Feel free to take a look at my work.",
@@ -647,13 +609,13 @@ function Home() {
   const desktopMode = () => {
     return (
       <>
-        <div className="flex flex-col -mt-4 items-center ">
-          <Element name="home" className="flex flex-row h-72 space-x-8 mt-12">
+        <div className="flex flex-col mt-8 items-center ">
+          <Element name="home" className="flex flex-row h-72 space-x-8 mt-16">
             <div className="flex flex-col  my-auto">
               <div
-                className={`w-6/6 mb-2 mt-4 line-clamp-1 ${
+                className={`w-6/6 mb-2 mt-16 line-clamp-1 ${
                   darkMode ? "text-white" : "text-[#405189]"
-                } font-google text-center text-[1.8rem] font-semibold  `}
+                } font-google text-center text-[2.2rem] font-semibold  `}
               >
                 Amanda Riandikaseta
               </div>
@@ -661,17 +623,17 @@ function Home() {
               <div
                 className={`w-6/6 mb-2 line-clamp-1 ${
                   darkMode ? "text-white" : "text-[#405189]"
-                } font-google text-center text-[1.2rem] font-semibold  `}
+                } font-google text-center text-[1.6rem] font-semibold  `}
               >
                 Software Engineer
               </div>
 
               <div>
-                <Social size={"text-2xl"} />
+                <Social size={"text-3xl"} />
               </div>
             </div>
             <div className="flex flex-col  mt-3 ">
-              <AvatarDesktop width={"w-52"} height={"h-52"} />
+              <AvatarDesktop width={"w-[18rem]"} height={"h-[18rem]"} />
             </div>
           </Element>
 
@@ -680,11 +642,12 @@ function Home() {
           <Element
             name="about"
             data-aos="fade-up"
+  
             className={` mb-2 mt-28 border-b-2 ${
               darkMode
                 ? "text-white  border-white"
                 : "text-[#405189] border-[#405189]"
-            } font-google text-center text-[1rem] font-semibold  `}
+            } font-google text-center text-[1.4rem] font-semibold  `}
           >
             About me
           </Element>
@@ -695,7 +658,7 @@ function Home() {
               scrollPosition > 205 && scrollPosition <= 680 ? "" : "hidden"
             }  ${
               darkMode ? "text-white" : "text-[#405189]"
-            } font-google text-justify text-[0.8rem] font-semibold  `}
+            } font-google text-justify text-[1.1rem] font-semibold  `}
           >
             <Typewriter
               words={[
@@ -705,7 +668,7 @@ function Home() {
               cursor
               cursorStyle="_"
               typeSpeed={20}
-              delaySpeed={10000}
+                delaySpeed={10000}
               deleteSpeed={0}
               onLoopDone={() => console.log("a")}
             />
@@ -717,7 +680,7 @@ function Home() {
               (scrollPosition <= 205) | (scrollPosition > 680) ? "" : "hidden"
             }  ${
               darkMode ? "text-white" : "text-[#405189]"
-            } font-google text-justify text-[0.8rem] font-semibold  `}
+            } font-google text-justify text-[1.1rem] font-semibold  `}
           >
             <Typewriter
               words={[
@@ -741,7 +704,7 @@ function Home() {
                 darkMode
                   ? "text-white  bg-[#394c5d]"
                   : "text-white bg-[#405189]"
-              } font-google text-center text-[0.8rem] font-semibold  `}
+              } font-google text-center text-[1rem] font-semibold  `}
             >
               Certification
             </Link>
@@ -755,7 +718,7 @@ function Home() {
               darkMode
                 ? "text-white  border-white"
                 : "text-[#405189] border-[#405189]"
-            } font-google text-center text-[1rem] font-semibold  `}
+            } font-google text-center text-[1.4rem] font-semibold  `}
           >
             Skills
           </Element>
@@ -765,7 +728,7 @@ function Home() {
           <div
             className={`w-5/6 mb-5 break-all  ${
               darkMode ? "text-white" : "text-[#405189]"
-            } font-google text-center text-[0.6rem] font-semibold flex flex-row justify-center space-x-3 mt-2 `}
+            } font-google text-center text-[0.8rem] font-semibold flex flex-row justify-center space-x-3 mt-2 `}
           >
             <div
               data-aos="fade-up"
@@ -827,7 +790,7 @@ function Home() {
           <div
             className={`w-4/6 mb-5 break-all  ${
               darkMode ? "text-white" : "text-[#405189]"
-            } font-google text-center text-[0.6rem] font-semibold flex flex-row justify-center space-x-3 mt-2 `}
+            } font-google text-center text-[0.8rem] font-semibold flex flex-row justify-center space-x-3 mt-2 `}
           >
             <div
               data-aos="fade-up"
@@ -861,11 +824,11 @@ function Home() {
           <Element
             name="project"
             data-aos="fade-up"
-            className={` mb-2 mt-28 border-b-2 ${
+            className={` mb-12 mt-28 border-b-2 ${
               darkMode
                 ? "text-white  border-white"
                 : "text-[#405189] border-[#405189]"
-            } font-google text-center text-[0.8rem] font-semibold  `}
+            } font-google text-center text-[1.4rem] font-semibold  `}
           >
             Project
           </Element>
@@ -877,11 +840,11 @@ function Home() {
           <Element
             name="contact"
             data-aos="fade-up"
-            className={` mb-5 mt-20 border-b-2 ${
+            className={` mb-12 mt-28  border-b-2 ${
               darkMode
                 ? "text-white  border-white"
                 : "text-[#405189] border-[#405189]"
-            } font-google text-center text-[1rem] font-semibold  `}
+            } font-google text-center text-[1.4rem] font-semibold  `}
           >
             Contact
           </Element>
@@ -890,7 +853,7 @@ function Home() {
             <div
             onClick={() =>
               openInNewTab(
-                "https://mail.google.com/mail/u/0/#inbox?compose=new"
+                "https://mail.google.com/mail/"
               )
             }
               data-aos="fade-up"
@@ -904,7 +867,7 @@ function Home() {
                 className="flex flex-row"
                 
               >
-                <a className="flex flex-col text-[2.2rem] mr-2">
+                <a className="flex flex-col text-[3.6rem] mr-2">
                   {" "}
                   {darkMode ? (
                     <i className="bx bx-envelope "></i>
@@ -914,10 +877,10 @@ function Home() {
                     </i>
                   )}
                 </a>
-                <div className="flex flex-col text-left w-[5rem] mx-auto ">
-                  <div className="flex flex-row mt-[3px]">
-                    <h1 className="text-[0.8rem] ">Email</h1>
-                    <div className="text-[0.6rem] ml-auto mt-[1px]">
+                <div className="flex flex-col text-left w-[10rem] mx-auto ">
+                  <div className="flex flex-row mt-[8px]">
+                    <h1 className="text-[1.2rem] ">Email</h1>
+                    <div className="text-[0.8rem] ml-auto mt-[5px]">
                       {darkMode ? (
                         <i className="bx bx-link-external"></i>
                       ) : (
@@ -931,7 +894,7 @@ function Home() {
                     </div>
                   </div>
 
-                  <h1 className="text-[0.5rem] whitespace-nowrap">
+                  <h1 className="text-[0.8rem] whitespace-nowrap">
                     riandikasp@gmail.com
                   </h1>
                 </div>
@@ -950,7 +913,7 @@ function Home() {
               } font-google text-center text-[0.8rem] font-semibold  `}
             >
               <div className="flex flex-row">
-                <a className="flex flex-col text-[2.2rem] mr-2  ">
+                <a className="flex flex-col text-[3.6rem] mr-2  ">
                   {" "}
                   {darkMode ? (
                     <i className="bx bxl-linkedin-square"></i>
@@ -963,10 +926,10 @@ function Home() {
                     </i>
                   )}
                 </a>
-                <div className="flex flex-col text-left   w-[5rem] mx-auto">
-                  <div className="flex flex-row mt-[3px]">
-                    <h1 className="text-[0.8rem] ">Linkedin</h1>
-                    <div className="text-[0.6rem] ml-auto mt-[1px]">
+                <div className="flex flex-col text-left   w-[10rem] mx-auto">
+                  <div className="flex flex-row mt-[8px]">
+                    <h1 className="text-[1.2rem] ">Linkedin</h1>
+                    <div className="text-[0.8rem] ml-auto mt-[5px]">
                       {darkMode ? (
                         <i className="bx bx-link-external"></i>
                       ) : (
@@ -979,7 +942,7 @@ function Home() {
                       )}
                     </div>
                   </div>
-                  <h1 className="text-[0.5rem] whitespace-nowrap">
+                  <h1 className="text-[0.8rem] whitespace-nowrap">
                     Amanda Riandikaseta
                   </h1>
                 </div>
@@ -996,7 +959,7 @@ function Home() {
               } font-google text-center text-[0.8rem] font-semibold  `}
             >
               <div className="flex flex-row">
-                <a className="flex flex-col text-[2.2rem] mr-2">
+                <a className="flex flex-col text-[3.6rem] mr-2">
                   {" "}
                   {darkMode ? (
                     <i className={"bx bxl-github"}></i>
@@ -1007,10 +970,10 @@ function Home() {
                     ></i>
                   )}
                 </a>
-                <div className="flex flex-col text-left   w-[5rem] mx-auto  ">
-                  <div className="flex flex-row mt-[3px]">
+                <div className="flex flex-col text-left   w-[10rem] mx-auto  ">
+                  <div className="flex flex-row mt-[8px]">
                     <h1 className="text-[0.8rem] ">Github</h1>
-                    <div className="text-[0.6rem] ml-auto  mt-[1px]">
+                    <div className="text-[0.8rem] ml-auto  mt-[5px]">
                       {darkMode ? (
                         <i className="bx bx-link-external "></i>
                       ) : (
@@ -1023,7 +986,7 @@ function Home() {
                       )}
                     </div>
                   </div>
-                  <h1 className="text-[0.5rem] whitespace-nowrap ">
+                  <h1 className="text-[0.8rem] whitespace-nowrap ">
                     Amanda Riandikaseta
                   </h1>
                 </div>

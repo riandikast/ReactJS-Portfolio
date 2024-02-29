@@ -47,7 +47,7 @@ function Certification() {
       <>
         {console.log("las", showNav)}
         <div
-          className={`flex flex-col mb-20 w-3/6 z-0    ${
+          className={`flex flex-col w-3/6 z-0 mt-16   ${
             darkMode ? "text-white" : "text-[#405189]"
           }`}
         >
@@ -64,7 +64,7 @@ function Certification() {
             autoplay={6000}
           >
             <Carousel.Item>
-              <div className="flex flex-col py-2 mx-auto w-[22rem]  ">
+              <div className="flex flex-col mt-4 px-8 w-full   ">
                 <div>
                   <img
                   
@@ -74,8 +74,8 @@ function Certification() {
                   />
                 </div>
 
-                <div className="my-auto mx-auto flex flex-col mt-4">
-                  <div className="text-[1rem]">Android Engineering (Kotlin) </div>
+                <div className="my-auto mx-auto flex flex-col mt-4 ">
+                  <div className="text-[1.2rem]">Android Engineering (Kotlin) </div>
 
                 
                 </div>
@@ -83,7 +83,7 @@ function Certification() {
               </div>
             </Carousel.Item>
             <Carousel.Item>
-              <div className="flex flex-col py-2 mx-auto w-[22rem]  ">
+              <div className="flex flex-col  p-8 w-full  ">
                 <div>
                   <img
                   
@@ -94,7 +94,7 @@ function Certification() {
                 </div>
 
                 <div className="my-auto mx-auto flex flex-col mt-4">
-                  <div className="text-[1rem]">HTML dan CSS Dasar </div>
+                  <div className="text-[1.2rem]">HTML dan CSS Dasar </div>
 
                 
                 </div>
@@ -103,7 +103,7 @@ function Certification() {
             </Carousel.Item>
 
             <Carousel.Item>
-              <div className="flex flex-col py-2 mx-auto w-[22rem]  ">
+              <div className="flex flex-col  p-8 w-full  ">
                 <div>
                   <img
                   
@@ -114,7 +114,7 @@ function Certification() {
                 </div>
 
                 <div className="my-auto mx-auto flex flex-col mt-4">
-                  <div className="text-[1rem]">Javascript ES6 </div>
+                  <div className="text-[1.2rem]">Javascript ES6 </div>
 
                 
                 </div>
@@ -123,7 +123,7 @@ function Certification() {
             </Carousel.Item>
 
             <Carousel.Item>
-              <div className="flex flex-col py-2 mx-auto w-[22rem]  ">
+              <div className="flex flex-col  p-8 w-full  ">
                 <div>
                   <img
                   
@@ -134,7 +134,7 @@ function Certification() {
                 </div>
 
                 <div className="my-auto mx-auto flex flex-col mt-4">
-                  <div className="text-[1rem]">React (Javascript)</div>
+                  <div className="text-[1.2rem]">React (Javascript)</div>
 
                 
                 </div>
@@ -144,7 +144,7 @@ function Certification() {
 
             
             <Carousel.Item>
-              <div className="flex flex-col py-2 mx-auto w-[22rem]  ">
+              <div className="flex flex-col  p-8 w-full  ">
                 <div>
                   <img
                   
@@ -155,7 +155,7 @@ function Certification() {
                 </div>
 
                 <div className="my-auto mx-auto flex flex-col mt-4">
-                  <div className="text-[1rem]">React Native</div>
+                  <div className="text-[1.2rem]">React Native</div>
 
                 
                 </div>
@@ -323,20 +323,20 @@ function Certification() {
       <motion.div
         className={`${
           darkMode ? "bg-[#0d1117] " : "bg-[#f3f3f9]"
-        } h-screens flex flex-col -mt-2`}
+        } h-full flex flex-col `}
         initial="initial"
         animate="in"
         exit="out"
         transition={{ duration: 0.5, ...transition }}
         variants={pageVariants}
       >
-        <div
-          className={`flex flex-col mb-2 mx-auto w-5/6 z-0 text-[1rem] min501:text-[1.2rem] mt-28 min501:mt-4 ${
+        {/* <div
+          className={`flex flex-col mb-2 mx-auto w-5/6 z-0 text-[1.2rem] min501:text-[1.7rem] mt-8 min501:mt-4 ${
             darkMode ? "text-white" : "text-[#405189]"
           }`}
         >
           Certification
-        </div>
+        </div> */}
         <div className="hidden min501:block">{desktopMode()}</div>
         <div className="min501:hidden">{mobileMode()}</div>
       </motion.div>

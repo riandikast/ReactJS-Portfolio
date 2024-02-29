@@ -17,6 +17,8 @@ import Carousel from "better-react-carousel";
 import { useScrollPosition } from "../customHooks/useScrollPosition";
 import { useAtom, atom } from "jotai";
 import { useNavigate } from "react-router-dom";
+import Popup from "../components/PopUp";
+import { render } from "@testing-library/react";
 
 function WebsiteProject() {
   const navigate = useNavigate();
@@ -35,18 +37,36 @@ function WebsiteProject() {
   const [showNav, setShowNav] = useAtom(showNavState);
   const [refreshType, setRefreshType] = useState(1);
 
+  const [isPopup, setIsPopup] = useState(false);
+  const [projectImg, setProjectImg] = useState();
+  const [projectName, setProjectName] = useState("");
+  const [projectPlatform, setProjectPlatform] = useState("");
+  const [projectDesc, setProjectDesc] = useState("");
+  const [projectLink1, setProjectLink1] = useState("");
+  const [projectLink2, setProjectLink2] = useState("");
+
   const scrollPosition = useScrollPosition();
   console.log("a", scrollPosition);
-  const openInNewTab = (url) => {
-    const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
-    if (newWindow) newWindow.opener = null
-  }
+
+  const handlePopup = (status, imgsrc, name, platf, desc, link1, link2) => {
+    console.log("test poppup", projectName);
+    setIsPopup(status);
+    setProjectImg(imgsrc);
+    setProjectName(name);
+    setProjectPlatform(platf);
+    setProjectDesc(desc);
+    setProjectLink1(link1)
+    setProjectLink2(link2)
+    render();
+  };
+
+
   const imageSliderDesktop = () => {
     return (
       <>
         {console.log("las", showNav)}
         <div
-          className={`flex flex-col mb-20 w-5/6 z-0    ${
+          className={`flex flex-col mb-20 w-5/6 min501:w-4/6 z-0   ${
             darkMode ? "text-white" : "text-[#405189]"
           }`}
         >
@@ -60,315 +80,76 @@ function WebsiteProject() {
             dotColorInactive={darkMode ? "#405189" : "#a8a8a8"}
             dotColorActive={darkMode ? "#f8fafc" : "#405189"}
             showDots={true}
-            autoplay={6000}
+            // autoplay={6000}
           >
             <Carousel.Item>
-              <div className="flex flex-row px-7 py-2 ">
+              <div className="flex flex-col  py-2 w-5/6 mx-auto">
                 <div className="">
                   <img
-            
-                    width="100%"
-                    src={Website1}
-                    className=""
-                  />
-                </div>
-
-                <div className="my-auto ml-5 flex flex-col text-left w-96">
-                  <div className="text-[0.8rem]">Name:</div>
-                  <div className="text-[0.9rem] line-clamp-1">MovieList</div>
-                  <div className="text-[0.8rem] mt-4">Platform:</div>
-                  <div className="text-[0.9rem] line-clamp-1">Website</div>
-                  <div className="text-[0.8rem] mt-4">Description:</div>
-                  <div className="text-[0.9rem] line-clamp-4 text-justify">Straightforward Wesbite that showing movie trailer and desc from API</div>
-                  <div className={`flex flex-row space-x-4 mt-4 ${darkMode ? '' : ''}`}> 
-                  <button onClick={() => openInNewTab('https://react-movie-h8are3rvm-riandikast.vercel.app/')} className={`text-[0.9rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Preview</button>
-                  <button onClick={() => openInNewTab('https://github.com/riandikast/React-Movie-Final.git')} className={`text-[0.9rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Download</button>
-                  </div>
-                </div>
-
-              </div>
-            </Carousel.Item>
-
-            <Carousel.Item>
-              <div className="flex flex-row px-7 py-2 ">
-                <div className="">
-                  <img
-            
                     width="100%"
                     src={Website2}
                     className=""
+                    onClick={
+                      !isPopup
+                        ? () =>
+                            handlePopup(
+                              true,
+                              Website2,
+                              "Bukapedia",
+                              "Website",
+                              "Ecommerce Website that sell fashion things like cloth and bag",
+                              "https://github.com/riandikast/React-E-Commerce",
+                              "https://react-e-commerce-seven.vercel.app/",
+                              
+                            )
+                        : () => setIsPopup(false)
+                    }
                   />
-                </div>
 
-                <div className="my-auto ml-5 flex flex-col text-left w-96">
-                  <div className="text-[0.8rem]">Name:</div>
-                  <div className="text-[0.9rem] line-clamp-1">Bukapedia</div>
-                  <div className="text-[0.8rem] mt-4">Platform:</div>
-                  <div className="text-[0.9rem] line-clamp-1">Website</div>
-                  <div className="text-[0.8rem] mt-4">Description:</div>
-                  <div className="text-[0.9rem] line-clamp-4 text-justify">Ecommerce Website that sell fashion things like cloth and bag</div>
-                  <div className={`flex flex-row space-x-4 mt-4 ${darkMode ? '' : ''}`}> 
-                  <button  onClick={() => openInNewTab('https://react-e-commerce-seven.vercel.app/')} className={`text-[0.9rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Preview</button>
-                  <button onClick={() => openInNewTab('https://github.com/riandikast/React-E-Commerce.git')} className={` text-[0.9rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Download</button>
+                  <div className="text-[1.2rem] min501:text-[1.4rem] line-clamp-1  mt-4">
+                    Bukapedia
                   </div>
                 </div>
-
               </div>
             </Carousel.Item>
 
-            <Carousel.Item>
-              <div className="flex flex-row px-7 py-2 ">
-                <div className="w-5/6">
-                  <img
-             
-                    width="100%"
-                    src={Website3}
-                    className=""
-                  />
-                </div>
-
-                <div className="my-auto ml-5 flex flex-col text-left w-96">
-                  <div className="text-[0.8rem]">Name:</div>
-                  <div className="text-[0.9rem] line-clamp-1">Penjualan Motor Bekas</div>
-                  <div className="text-[0.8rem] mt-4">Platform:</div>
-                  <div className="text-[0.9rem] line-clamp-1">Website</div>
-                  <div className="text-[0.8rem] mt-4">Description:</div>
-                  <div className="text-[0.9rem] line-clamp-4 text-justify">Ecommerce Website for selling secondhand motorcyle</div>
-                  <div className={`flex flex-row space-x-4 mt-4 ${darkMode ? '' : ''}`}> 
-                  <button className={` opacity-40 text-[0.9rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Preview</button>
-                  <button className={` opacity-40 text-[0.9rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Download</button>
-                  </div>
-                </div>
-
-              </div>
-            </Carousel.Item>
 
             <Carousel.Item>
-              <div className="flex flex-row px-7 py-2 ">
+              <div className="flex flex-col  py-2 w-5/6 mx-auto ">
                 <div className="">
                   <img
-               
                     width="100%"
-                    src={Website4}
+                    src={Website1}
                     className=""
+                    onClick={
+                      !isPopup
+                        ? () =>
+                            handlePopup(
+                              true,
+                              Website1,
+                              "MovieList",
+                              "Website",
+                              "Straightforward Wesbite that showing movie trailer and desc from API",
+                              "https://github.com/riandikast/React-Movie-Final",
+                              "https://react-movie-h8are3rvm-riandikast.vercel.app/",
+                            )
+                        : () => setIsPopup(false)
+                    }
                   />
-                </div>
 
-                <div className="my-auto ml-5 flex flex-col text-left w-96">
-                  <div className="text-[0.8rem]">Name:</div>
-                  <div className="text-[0.9rem] line-clamp-1">Online Tech Shop</div>
-                  <div className="text-[0.8rem] mt-4">Platform:</div>
-                  <div className="text-[0.9rem] line-clamp-1">Website</div>
-                  <div className="text-[0.8rem] mt-4">Description:</div>
-                  <div className="text-[0.9rem] line-clamp-5 text-justify">An online shop website created using CodeIgniter as the framework.</div>
-                  <div className={`flex flex-row space-x-4 mt-4 ${darkMode ? '' : ''}`}> 
-                  <button className={`opacity-40  text-[0.9rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Preview</button>
-                  <button className={`opacity-40  text-[0.9rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Download</button>
+                  <div className="text-[1.2rem] min501:text-[1.4rem] line-clamp-1  mt-4">
+                    Movie List
                   </div>
                 </div>
-
               </div>
             </Carousel.Item>
 
-            
-            <Carousel.Item>
-              <div className="flex flex-row px-7 py-2 ">
-                <div className="">
-                  <img
-               
-                    width="100%"
-                    src={Website5}
-                    className=""
-                  />
-                </div>
-
-                <div className="my-auto ml-5 flex flex-col text-left w-96">
-                  <div className="text-[0.8rem]">Name:</div>
-                  <div className="text-[0.9rem] line-clamp-1">News</div>
-                  <div className="text-[0.8rem] mt-4">Platform:</div>
-                  <div className="text-[0.9rem] line-clamp-1">Website</div>
-                  <div className="text-[0.8rem] mt-4">Description:</div>
-                  <div className="text-[0.9rem] line-clamp-5 text-justify">Straightforward Website for showing updated News from API </div>
-                  <div className={`flex flex-row space-x-4 mt-4 ${darkMode ? '' : ''}`}> 
-                  <button className={`opacity-40 text-[0.9rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Preview</button>
-                  <button onClick={() => openInNewTab('https://github.com/riandikast/final-news.git')} className={` text-[0.9rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Download</button>
-                  </div>
-                </div>
-
-              </div>
-            </Carousel.Item>
-          </Carousel>
+                </Carousel>
         </div>
       </>
     );
   };
 
-  const imageSliderMobile = () => {
-    return (
-      <>
-        {console.log("las", showNav)}
-        <div
-          className={`flex flex-col mb-20 w-5/6   z-0 relative bottom-48 ${
-            darkMode ? "text-white" : "text-[#405189]"
-          }`}
-        >
-          <Carousel
-            cols={1}
-            rows={1}
-            gap={10}
-            loop={true}
-            hideArrow={showNav ? true : false}
-            mobileBreakpoint={100}
-            dotColorInactive={darkMode ? "#405189" : "#a8a8a8"}
-            dotColorActive={darkMode ? "#f8fafc" : "#405189"}
-            showDots={true}
-            autoplay={6000}
-          
-            
-          >
-        
-            <Carousel.Item>
-              <div className="flex flex-col px-3 mt-48  mx-auto w-[16rem] ">
-                <div>
-                  <img
-                  
-                    width="100%"
-                    src={Website1}
-                    className=""
-                  />
-                </div>
-
-                <div className="my-auto  flex flex-col text-left mt-2 px-2 ">
-                  <div className="text-[0.6rem]">Name:</div>
-                  <div className="text-[0.7rem] line-clamp-1">MovieList</div>
-                  <div className="text-[0.6rem] mt-2">Platform:</div>
-                  <div className="text-[0.7rem] line-clamp-1">Website</div>
-                  <div className="text-[0.6rem] mt-2">Description:</div>
-                  <div className="text-[0.7rem] line-clamp-5 text-justify">Straightforward Wesbite that showing movie trailer and desc from API</div>
-                  <div className={`flex flex-row space-x-4 mt-2 ${darkMode ? '' : ''}`}> 
-                  <button onClick={() => openInNewTab('https://react-movie-h8are3rvm-riandikast.vercel.app/')} className={`text-[0.6rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Preview</button>
-                  <button onClick={() => openInNewTab('https://github.com/riandikast/React-Movie-Final.git')} className={`text-[0.6rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Download</button>
-                  </div>
-                </div>
-
-              </div>
-            </Carousel.Item>
-
-            <Carousel.Item>
-              <div className="flex flex-col px-3 mt-48  mx-auto w-[16rem] ">
-                <div>
-                  <img
-                  
-                    width="100%"
-                    src={Website2}
-                    className=""
-                  />
-                </div>
-
-                <div className="my-auto  flex flex-col text-left mt-2 px-2 ">
-                  <div className="text-[0.6rem]">Name:</div>
-                  <div className="text-[0.7rem] line-clamp-1">Bukapedia</div>
-                  <div className="text-[0.6rem] mt-2">Platform:</div>
-                  <div className="text-[0.7rem] line-clamp-1">Website</div>
-                  <div className="text-[0.6rem] mt-2">Description:</div>
-                  <div className="text-[0.7rem] line-clamp-5 text-justify" >Ecommerce Website that sell fashion things like cloth and bag</div>
-                  <div className={`flex flex-row space-x-4 mt-2 ${darkMode ? '' : ''}`}> 
-                  <button  onClick={() => openInNewTab('https://react-e-commerce-seven.vercel.app/')} className={`text-[0.6rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Preview</button>
-                  <button onClick={() => openInNewTab('https://github.com/riandikast/React-E-Commerce.git')} className={` text-[0.6rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Download</button>
-                  </div>
-                </div>
-
-              </div>
-            </Carousel.Item>
-
-            <Carousel.Item>
-              <div className="flex flex-col px-3 mt-48  mx-auto w-[15rem] ">
-                <div>
-                  <img
-                  
-                    width="100%"
-                    src={Website3}
-                    className=""
-                  />
-                </div>
-
-                <div className="my-auto  flex flex-col text-left mt-2 px-2 ">
-                  <div className="text-[0.6rem]">Name:</div>
-                  <div className="text-[0.7rem] line-clamp-1">Penjualan Motor Bekas</div>
-                  <div className="text-[0.6rem] mt-2">Platform:</div>
-                  <div className="text-[0.7rem] line-clamp-1">Website</div>
-                  <div className="text-[0.6rem] mt-2">Description:</div>
-                  <div className="text-[0.7rem] line-clamp-5 text-justify">Ecommerce Website for selling secondhand motorcyle</div>
-                  <div className={`flex flex-row space-x-4 mt-2 ${darkMode ? '' : ''}`}> 
-                  <button className={` opacity-40 text-[0.6rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Preview</button>
-                  <button className={` opacity-40 text-[0.6rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Download</button>
-                  </div>
-                </div>
-
-              </div>
-            </Carousel.Item>
-
-            <Carousel.Item>
-              <div className="flex flex-col px-3 mt-48  mx-auto w-[15rem] ">
-                <div>
-                  <img
-                  
-                    width="100%"
-                    src={Website4}
-                    className=""
-                  />
-                </div>
-
-                <div className="my-auto  flex flex-col text-left mt-2 px-2 ">
-                  <div className="text-[0.6rem]">Name:</div>
-                  <div className="text-[0.7rem] line-clamp-1">Online Tech Shop</div>
-                  <div className="text-[0.6rem] mt-2">Platform:</div>
-                  <div className="text-[0.7rem] line-clamp-1">Website</div>
-                  <div className="text-[0.6rem] mt-2">Description:</div>
-                  <div className="text-[0.7rem] line-clamp-5 text-justify">An online shop website created using CodeIgniter as the framework.</div>
-                  <div className={`flex flex-row space-x-4 mt-2 ${darkMode ? '' : ''}`}> 
-                  <button className={`opacity-40  text-[0.6rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Preview</button>
-                  <button className={`opacity-40  text-[0.6rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Download</button>
-                  </div>
-                </div>
-
-              </div>
-            </Carousel.Item>
-           
-            <Carousel.Item>
-              <div className="flex flex-col px-3 mt-48  mx-auto w-[15rem] ">
-                <div>
-                  <img
-                  
-                    width="100%"
-                    src={Website5}
-                    className=""
-                  />
-                </div>
-
-                <div className="my-auto  flex flex-col text-left mt-2 px-2 ">
-                  <div className="text-[0.6rem]">Name:</div>
-                  <div className="text-[0.7rem] line-clamp-1">News</div>
-                  <div className="text-[0.6rem] mt-2">Platform:</div>
-                  <div className="text-[0.7rem] line-clamp-1">Website</div>
-                  <div className="text-[0.6rem] mt-2">Description:</div>
-                  <div className="text-[0.7rem] line-clamp-5 text-justify">Straightforward Website for showing updated News from API</div>
-                  <div className={`flex flex-row space-x-4 mt-2 ${darkMode ? '' : ''}`}> 
-                  <button className={`opacity-40 text-[0.6rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Preview</button>
-                  <button onClick={() => openInNewTab('https://github.com/riandikast/final-news.git')} className={` text-[0.6rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Download</button>
-                  </div>
-                </div>
-
-              </div>
-            </Carousel.Item>
-           
-        
-          </Carousel>
-          
-        </div>
-      </>
-    );
-  };
 
   const desktopMode = () => {
     return (
@@ -380,22 +161,13 @@ function WebsiteProject() {
     );
   };
 
-  const mobileMode = () => {
-    return (
-      <>
-        <div className={`flex flex-col items-center`}>
-          {imageSliderMobile()}
-        </div>
-      </>
-    );
-  };
 
   return (
     <>
       <motion.div
         className={`${
           darkMode ? "bg-[#0d1117] " : "bg-[#f3f3f9]"
-        } h-screens flex flex-col -mt-2`}
+        } h-screens flex flex-col mt-32 min501:mt-12`}
         initial="initial"
         animate="in"
         exit="out"
@@ -403,14 +175,33 @@ function WebsiteProject() {
         variants={pageVariants}
       >
         <div
-          className={`flex flex-col mb-2 mx-auto w-5/6 z-0 text-[1.2rem] mt-28 min501:mt-4 text-[1rem] min501:text-[1.2rem] ${
+          className={`flex  flex-col mb-2 mx-auto w-5/6 z-0 text-[1.3rem] min501:text-[1.5rem]  min501:mt-4 ${
             darkMode ? "text-white" : "text-[#405189]"
           }`}
         >
           Website Project
         </div>
-        <div className="hidden min501:block">{desktopMode()}</div>
-        <div className="min501:hidden">{mobileMode()}</div>
+        <div className="">{desktopMode()}</div>
+      
+
+        <div className={`absolute  w-full  ${isPopup ? "" : "hidden"} `}>
+          {isPopup ? (
+            <Popup
+              image={projectImg}
+              name={projectName}
+              desc={projectDesc}
+              platform={projectPlatform}
+              link1={projectLink1}
+              link2={projectLink2}
+              video={false}
+              demo={true}
+              cancel={() => setIsPopup(false)}
+            />
+          ) : (
+            ""
+          )}
+   
+        </div>
       </motion.div>
     </>
   );

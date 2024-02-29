@@ -18,6 +18,8 @@ import Carousel from "better-react-carousel";
 import { useScrollPosition } from "../customHooks/useScrollPosition";
 import { useAtom, atom } from "jotai";
 import { useNavigate } from "react-router-dom";
+import Popup from "../components/PopUp";
+import { render } from "@testing-library/react";
 
 function MobileProject() {
   const navigate = useNavigate();
@@ -35,21 +37,37 @@ function MobileProject() {
   const [darkMode, setDarkMode] = useAtom(themeState);
   const [showNav, setShowNav] = useAtom(showNavState);
   const [refreshType, setRefreshType] = useState(1);
+  const [isPopup, setIsPopup] = useState(false);
+  const [projectImg, setProjectImg] = useState();
+  const [projectName, setProjectName] = useState("");
+  const [projectPlatform, setProjectPlatform] = useState("");
+  const [projectDesc, setProjectDesc] = useState("");
+  const [projectLink1, setProjectLink1] = useState("");
+  const [projectLink2, setProjectLink2] = useState("");
 
   const scrollPosition = useScrollPosition();
   console.log("a", scrollPosition);
 
-  const openInNewTab = (url) => {
-    const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
-    if (newWindow) newWindow.opener = null
-  }
 
-  const imageSliderDesktop = () => {
+
+  const handlePopup = (status, imgsrc, name, platf, desc, link1, link2) => {
+    console.log("test poppup", projectName);
+    setIsPopup(status);
+    setProjectImg(imgsrc);
+    setProjectName(name);
+    setProjectPlatform(platf);
+    setProjectDesc(desc);
+    setProjectLink1(link1);
+    setProjectLink2(link2);
+    render();
+  };
+
+  const imageSlider = () => {
     return (
       <>
         {console.log("las", showNav)}
         <div
-          className={`flex flex-col mb-20 w-4/6 z-0 px-10    ${
+          className={`flex flex-col h-screen w-[90%]  min501:w-2/6 z-0  z-0   ${
             darkMode ? "text-white" : "text-[#405189]"
           }`}
         >
@@ -63,29 +81,32 @@ function MobileProject() {
             dotColorInactive={darkMode ? "#405189" : "#a8a8a8"}
             dotColorActive={darkMode ? "#f8fafc" : "#405189"}
             showDots={true}
-            autoplay={6000}
+   
+            // autoplay={6000}
           >
             <Carousel.Item>
-              <div className="flex flex-row py-2 ">
-              <div className="w-[11rem] ml-auto">
+              <div className="flex flex-col py-2 w-3/6 h-[40%] m-auto">
+                <div className="my-auto  ">
                   <img
-                 
                     width="100%"
                     src={Bobosa}
-                    className="max-h-80"
+                    className="h-[70%] min501:h-[80%] mt-12"
+                    onClick={
+                      !isPopup
+                        ? () =>
+                            handlePopup(
+                              true,
+                              Bobosa,
+                              "Bobosa",
+                              "Android",
+                              "Bobosa is a Kotlin-built application designed for estimating the body weight of cows.",
+                              "https://play.google.com/store/apps/details?id=com.sleepydev.bobosa"
+                            )
+                        : () => setIsPopup(false)
+                    }
                   />
-                </div>
-
-                <div className="my-auto ml-5 mr-auto flex flex-col w-60 text-left ">
-                  <div className="text-[0.8rem]">Name:</div>
-                  <div className="text-[0.9rem] line-clamp-1">Bobosa</div>
-                  <div className="text-[0.8rem] mt-4">Platform:</div>
-                  <div className="text-[0.9rem] line-clamp-1">Android</div>
-                  <div className="text-[0.8rem] mt-4">Description:</div>
-                  <div className="text-[0.9rem] text-justify line-clamp-4">Bobosa is a Kotlin-built application designed for estimating the body weight of cows.</div>
-                  <div className={`flex flex-row space-x-4 mt-4 ${darkMode ? '' : ''}`}> 
-                  <button onClick={() => openInNewTab('https://play.google.com/store/apps/details?id=com.sleepydev.bobosa')} className={`text-[0.9rem] p-2 rounded-lg  ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Preview</button>
-                  <button onClick={() => openInNewTab('https://play.google.com/store/apps/details?id=com.sleepydev.bobosa')} className={`text-[0.9rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Download</button>
+                  <div className="text-[1.2rem] min501:text-[1.4rem] line-clamp-1  mt-4">
+                    Bobosa
                   </div>
                 </div>
 
@@ -93,367 +114,96 @@ function MobileProject() {
             </Carousel.Item>
 
             <Carousel.Item>
-              <div className="flex flex-row py-2 ">
-              <div className="w-[11rem] ml-auto">
+              <div className="flex flex-col py-2 w-3/6 mx-auto h-[40%]">
+                <div>
                   <img
-                 
                     width="100%"
                     src={Ftt}
-                    className="max-h-80"
+                    className="h-[70%] min501:h-[80%] mt-12"
+                    onClick={
+                      !isPopup
+                        ? () =>
+                            handlePopup(
+                              true,
+                              Ftt,
+                              "Floating Text",
+                              "Android",
+                              "Floating Text Template is a note-taking Android application with a unique feature that",
+                              "https://play.google.com/store/apps/details?id=com.sleepydev.floatingtexttemplate"
+                            )
+                        : () => setIsPopup(false)
+                    }
                   />
-                </div>
-
-                <div className="my-auto ml-5 mr-auto flex flex-col w-60 text-left ">
-                  <div className="text-[0.8rem]">Name:</div>
-                  <div className="text-[0.9rem] line-clamp-1">Floating Text Template</div>
-                  <div className="text-[0.8rem] mt-4">Platform:</div>
-                  <div className="text-[0.9rem] line-clamp-1">Android</div>
-                  <div className="text-[0.8rem] mt-4">Description:</div>
-                  <div className="text-[0.9rem] text-justify line-clamp-5">Floating Text Template is a note-taking Android application with a unique feature that
-allows it to float over other apps, making it easier to copy any saved note.</div>
-                  <div className={`flex flex-row space-x-4 mt-4 ${darkMode ? '' : ''}`}> 
-                  <button onClick={() => openInNewTab('https://play.google.com/store/apps/details?id=com.sleepydev.floatingtexttemplate')} className={`text-[0.9rem] p-2 rounded-lg  ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Preview</button>
-                  
-                  <button onClick={() => openInNewTab('https://play.google.com/store/apps/details?id=com.sleepydev.floatingtexttemplate')} className={`text-[0.9rem] p-2 rounded-lg  ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Download</button>
-                 
+                  <div className="text-[1.2rem] min501:text-[1.4rem] line-clamp-2  mt-4">
+                    Floating Text
                   </div>
                 </div>
-
               </div>
             </Carousel.Item>
-            
-              <Carousel.Item>
-              <div className="flex flex-row py-2 ">
-              <div className="w-[11rem] ml-auto">
-                  <img
-                 
-                    width="100%"
-                    src={Mobile1}
-                    className=""
-                  />
-                </div>
 
-                <div className="my-auto ml-5 mr-auto flex flex-col w-60 text-left ">
-                  <div className="text-[0.8rem]">Name:</div>
-                  <div className="text-[0.9rem] line-clamp-1">Movflix</div>
-                  <div className="text-[0.8rem] mt-4">Platform:</div>
-                  <div className="text-[0.9rem] line-clamp-1">Android</div>
-                  <div className="text-[0.8rem] mt-4">Description:</div>
-                  <div className="text-[0.9rem] text-justify line-clamp-4">Simple android application created using kotlin that showing movie data from API with trailer and description</div>
-                  <div className={`flex flex-row space-x-4 mt-4 ${darkMode ? '' : ''}`}> 
-                  <button className={`opacity-40 text-[0.9rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Preview</button>
-                  <button onClick={() => openInNewTab('https://drive.google.com/file/d/1nJVX9V5ZLtDJ6KJI6uq2Gf1blIfoZGgt/view?usp=share_link')} className={` text-[0.9rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Download</button>
-                  </div>
-                </div>
-
-              </div>
-            </Carousel.Item>
- 
+  
             <Carousel.Item>
-              <div className="flex flex-row py-2">
-              <div className="w-[11rem] ml-auto">
+              <div className="flex flex-col  py-2 w-3/6 mx-auto h-[40%]">
+                <div>
                   <img
-                 
                     width="100%"
                     src={Mobile2}
-                    className=""
+                    className="h-[80%] min501:h-[90%] mt-12"
+                    onClick={
+                      !isPopup
+                        ? () =>
+                            handlePopup(
+                              true,
+                              Mobile2,
+                              "SecondHand",
+                              "Android",
+                              "E-Commerce Application that we can buy and sell second products.",
+                              "https://github.com/riandikast/SecondHand5"
+                            )
+                        : () => setIsPopup(false)
+                    }
                   />
-                </div>
-
-                <div className="my-auto ml-5 mr-auto flex flex-col w-60 text-left "> 
-                  <div className="text-[0.8rem]">Name:</div>
-                  <div className="text-[0.9rem] line-clamp-1">SecondHand</div>
-                  <div className="text-[0.8rem] mt-4">Platform:</div>
-                  <div className="text-[0.9rem] line-clamp-1">Android</div>
-                  <div className="text-[0.8rem] mt-4">Description:</div>
-                  <div className="text-[0.9rem] text-justify line-clamp-7">E-Commerce Application that we can buy and sell second products. This app will bring sellers and buyers to be able to negotiate outside the app</div>
-                  <div className={`flex flex-row space-x-4 mt-4 ${darkMode ? '' : ''}`}> 
-                  <button onClick={() => openInNewTab('https://youtu.be/rtlGFGN3wMs')} className={`text-[0.9rem] p-2 rounded-lg  ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Preview</button>
-                  
-                  <button className={` opacity-40 text-[0.9rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Download</button>
+                  <div className="text-[1.2rem] min501:text-[1.4rem] line-clamp-1  mt-4">
+                    SecondHand
                   </div>
                 </div>
 
               </div>
             </Carousel.Item>
-
-            {/* <Carousel.Item>
-              <div className="flex flex-row py-2">
-              <div className="w-[11rem] ml-auto">
-                  <img
-                 
-                    width="100%"
-                    src={Mobile3}
-                    className=""
-                  />
-                </div>
-
-                <div className="my-auto ml-5 mr-auto flex flex-col w-60 text-left "> 
-                  <div className="text-[0.8rem]">Name:</div>
-                  <div className="text-[0.9rem] line-clamp-1">Simple Note</div>
-                  <div className="text-[0.8rem] mt-4">Platform:</div>
-                  <div className="text-[0.9rem] line-clamp-1">Android</div>
-                  <div className="text-[0.8rem] mt-4">Description:</div>
-                  <div className="text-[0.9rem] line-clamp-7">Simple note app, usually used for saving meeting schedule, important note, etc. </div>
-                  <div className={`flex flex-row space-x-4 mt-4 ${darkMode ? '' : ''}`}> 
-                  <button className={` opacity-40 text-[0.9rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Preview</button>
-                  <button className={` opacity-40 text-[0.9rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Download</button>
-                  </div>
-                </div>
-
-              </div>
-            </Carousel.Item> */}
 
             <Carousel.Item>
-              <div className="flex flex-row py-2">
-              <div className="w-[11rem] ml-auto">
-                  <img
-                 
-                    width="100%"
-                    src={Mobile4}
-                    className=""
-                  />
-                </div>
-
-                <div className="my-auto ml-5 mr-auto flex flex-col w-60 text-left "> 
-                  <div className="text-[0.8rem]">Name:</div>
-                  <div className="text-[0.9rem] line-clamp-1">STAY: Hotel Reservation</div>
-                  <div className="text-[0.8rem] mt-4">Platform:</div>
-                  <div className="text-[0.9rem] line-clamp-1">Android</div>
-                  <div className="text-[0.8rem] mt-4">Description:</div>
-                  <div className="text-[0.9rem]  text-justify line-clamp-7">This app can help user to booking a hotel</div>
-                  <div className={`flex flex-row space-x-4 mt-4 ${darkMode ? '' : ''}`}> 
-                  <button onClick={() => openInNewTab('https://youtu.be/lj4HE5IB18M')}  className={` text-[0.9rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Preview</button>
-                  <button className={` opacity-40 text-[0.9rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Download</button>
-                  
+              <div className="flex flex-col py-2 w-3/6 mx-auto my-auto h-[40%]" >
+                <div>
+                  <img width="100%" src={Mobile4} className="h-[80%] min501:h-[90%] mt-12" onClick={
+                      !isPopup
+                        ? () =>
+                            handlePopup(
+                              true,
+                              Mobile4,
+                              "Stay",
+                              "Android",
+                              "This app help user to booking a hotel",
+                              "https://github.com/riandikast/SecondHand5"
+                            )
+                        : () => setIsPopup(false)
+                    }/>
+                  <div className="text-[1.2rem] min501:text-[1.4rem] line-clamp-1  mt-4">
+                    Stay
                   </div>
                 </div>
 
               </div>
             </Carousel.Item>
-
-        
           </Carousel>
         </div>
       </>
     );
   };
-
-  const imageSliderMobile = () => {
-    return (
-      <>
-        {console.log("las", showNav)}
-        <div
-          className={`flex flex-col mb-20 w-5/6   z-0 relative bottom-60 ${
-            darkMode ? "text-white" : "text-[#405189]"
-          }`}
-        >
-          <Carousel
-            cols={1}
-            rows={1}
-            gap={10}
-            loop={true}
-            hideArrow={showNav ? true : false}
-            mobileBreakpoint={100}
-            dotColorInactive={darkMode ? "#405189" : "#a8a8a8"}
-            dotColorActive={darkMode ? "#f8fafc" : "#405189"}
-            showDots={true}
-            autoplay={6000}
-          
-            
-          >
-        
-        <Carousel.Item>
-              <div className="flex flex-col px-3 mt-60  mx-auto w-[14rem] ">
-                <div>
-                  <img
-                    width="100%"
-                    src={Bobosa}
-                    className="max-h-80"
-                  />
-                </div>
-
-                <div className="my-auto  flex flex-col text-left mt-2 px-2 w-40 ">
-                  <div className="text-[0.6rem]">Name:</div>
-                  <div className="text-[0.7rem] line-clamp-1">Bobosa</div>
-                  <div className="text-[0.6rem] mt-2">Platform:</div>
-                  <div className="text-[0.7rem] line-clamp-1">Android</div>
-                  <div className="text-[0.6rem] mt-2">Description:</div>
-                  <div className="text-[0.7rem] line-clamp-7 text-justify">Bobosa is a Kotlin-built application designed for estimating the body weight of cows.</div>
-                  <div className={`flex flex-row space-x-4 mt-2 ${darkMode ? '' : ''}`}> 
-                  <button onClick={() => openInNewTab('https://play.google.com/store/apps/details?id=com.sleepydev.bobosa')} className={`text-[0.6rem] p-2 rounded-lg  ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Preview</button>
-                  <button onClick={() => openInNewTab('https://play.google.com/store/apps/details?id=com.sleepydev.bobosa')} className={`text-[0.6rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Download</button>
-                 
-                  </div>
-                </div>
-
-              </div>
-            </Carousel.Item>
-
-            <Carousel.Item>
-              <div className="flex flex-col px-3 mt-60  mx-auto w-[14rem] ">
-                <div>
-                  <img
-                    width="100%"
-                    src={Ftt}
-                    className="max-h-80"
-                  />
-                </div>
-
-                <div className="my-auto  flex flex-col text-left mt-2 px-2 w-40 ">
-                  <div className="text-[0.6rem]">Name:</div>
-                  <div className="text-[0.7rem] line-clamp-1">Floating Text Template</div>
-                  <div className="text-[0.6rem] mt-2">Platform:</div>
-                  <div className="text-[0.7rem] line-clamp-1">Android</div>
-                  <div className="text-[0.6rem] mt-2">Description:</div>
-                  <div className="text-[0.7rem] line-clamp-7 text-justify">Floating Text Template is a note-taking Android application with a unique feature that
-allows it to float over other apps, making it easier to copy any saved note.</div>
-                  <div className={`flex flex-row space-x-4 mt-2 ${darkMode ? '' : ''}`}> 
-                  <button onClick={() => openInNewTab('https://play.google.com/store/apps/details?id=com.sleepydev.floatingtexttemplate')} className={`text-[0.6rem] p-2 rounded-lg  ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Preview</button>
-                  
-                  <button onClick={() => openInNewTab('https://play.google.com/store/apps/details?id=com.sleepydev.floatingtexttemplate')} className={`text-[0.6rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Download</button>
-                 
-                  </div>
-                </div>
-
-              </div>
-            </Carousel.Item>
-
-            <Carousel.Item>
-              <div className="flex flex-col px-3 mt-60  mx-auto w-[14rem] ">
-                <div>
-                  <img
-                  
-                    width="100%"
-                    src={Mobile1}
-                    className=""
-                  />
-                </div>
-
-                <div className="my-auto  flex flex-col text-left mt-2 px-2 w-40 ">
-                  <div className="text-[0.6rem]">Name:</div>
-                  <div className="text-[0.7rem] line-clamp-1">Movflix</div>
-                  <div className="text-[0.6rem] mt-2">Platform:</div>
-                  <div className="text-[0.7rem] line-clamp-1">Android</div>
-                  <div className="text-[0.6rem] mt-2">Description:</div>
-                  <div className="text-[0.7rem] line-clamp-7 text-justify">Simple android application created using kotlin that showing movie data from API with trailer and description</div>
-                  <div className={`flex flex-row space-x-4 mt-2 ${darkMode ? '' : ''}`}> 
-                  <button className={`opacity-40 text-[0.6rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Preview</button>
-                  <button onClick={() => openInNewTab('https://drive.google.com/file/d/1nJVX9V5ZLtDJ6KJI6uq2Gf1blIfoZGgt/view?usp=share_link')} className={` text-[0.6rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Download</button>
-                  </div>
-                </div>
-
-              </div>
-            </Carousel.Item>
-
-            <Carousel.Item>
-              <div className="flex flex-col px-3 mt-60  mx-auto w-[14rem] ">
-                <div>
-                  <img
-                  
-                    width="100%"
-                    src={Mobile2}
-                    className=""
-                  />
-                </div>
-
-                <div className="my-auto  flex flex-col text-left mt-2 px-2 w-40 ">
-                  <div className="text-[0.6rem]">Name:</div>
-                  <div className="text-[0.7rem] line-clamp-1">SecondHand</div>
-                  <div className="text-[0.6rem] mt-2">Platform:</div>
-                  <div className="text-[0.7rem] line-clamp-1">Android</div>
-                  <div className="text-[0.6rem] mt-2">Description:</div>
-                  <div className="text-[0.7rem] line-clamp-7 text-justify">E-Commerce Application that we can buy and sell second products. This app will bring sellers and buyers to be able to negotiate outside the app</div>
-                  <div className={`flex flex-row space-x-4 mt-2 ${darkMode ? '' : ''}`}> 
-                  <button onClick={() => openInNewTab('https://youtu.be/rtlGFGN3wMs')} className={`text-[0.6rem] p-2 rounded-lg  ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Preview</button>
-                  
-                  <button className={` opacity-40 text-[0.6rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Download</button>
-                  </div>
-                </div>
-
-              </div>
-            </Carousel.Item>
-
-            {/* <Carousel.Item>
-              <div className="flex flex-col px-3 mt-60  mx-auto w-[14rem] ">
-                <div>
-                  <img
-                  
-                    width="100%"
-                    src={Mobile3}
-                    className=""
-                  />
-                </div>
-
-                <div className="my-auto  flex flex-col text-left mt-2 px-2 w-40 ">
-                  <div className="text-[0.6rem]">Name:</div>
-                  <div className="text-[0.7rem] line-clamp-1">Simple Note</div>
-                  <div className="text-[0.6rem] mt-2">Platform:</div>
-                  <div className="text-[0.7rem] line-clamp-1">Android</div>
-                  <div className="text-[0.6rem] mt-2">Description:</div>
-                  <div className="text-[0.7rem] line-clamp-7">Simple note app, usually used for saving meeting schedule, important note, etc</div>
-                  <div className={`flex flex-row space-x-4 mt-2 ${darkMode ? '' : ''}`}> 
-                  <button className={` opacity-40 text-[0.6rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Preview</button>
-                  <button className={` opacity-40 text-[0.6rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Download</button>
-                  </div>
-                </div>
-
-              </div>
-            </Carousel.Item> */}
-
-            <Carousel.Item>
-              <div className="flex flex-col px-3 mt-60  mx-auto w-[14rem] ">
-                <div>
-                  <img
-                  
-                    width="100%"
-                    src={Mobile4}
-                    className=""
-                  />
-                </div>
-
-                <div className="my-auto  flex flex-col text-left mt-2 px-2 w-40 ">
-                  <div className="text-[0.6rem]">Name:</div>
-                  <div className="text-[0.7rem] line-clamp-1">STAY: Hotel Reservation</div>
-                  <div className="text-[0.6rem] mt-2">Platform:</div>
-                  <div className="text-[0.7rem] line-clamp-1">Android</div>
-                  <div className="text-[0.6rem] mt-2">Description:</div>
-                  <div className="text-[0.7rem] line-clamp-7 text-justify">This app can help user to booking a hotel</div>
-                  <div className={`flex flex-row space-x-4 mt-2 ${darkMode ? '' : ''}`}> 
-                  <button onClick={() => openInNewTab('https://youtu.be/lj4HE5IB18M')}  className={` text-[0.6rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Preview</button>
-                  <button className={` opacity-40 text-[0.6rem] p-2 rounded-lg ${darkMode ? 'bg-[#394c5d] text-white' : 'bg-[#405189] text-white'}`}>Download</button>
-                  
-                  </div>
-                </div>
-
-              </div>
-            </Carousel.Item>
-        
-        
-          </Carousel>
-          
-        </div>
-      </>
-    );
-  };
-
 
   const desktopMode = () => {
     return (
       <>
-        <div className={`flex flex-col items-center`}>
-          {imageSliderDesktop()}
-        </div>
-      </>
-    );
-  };
-
-  const mobileMode = () => {
-    return (
-      <>
-        <div className={`flex flex-col items-center`}>
-          {imageSliderMobile()}
-        </div>
+        <div className={`flex flex-col items-center `}>{imageSlider()}</div>
       </>
     );
   };
@@ -463,7 +213,7 @@ allows it to float over other apps, making it easier to copy any saved note.</di
       <motion.div
         className={`${
           darkMode ? "bg-[#0d1117] " : "bg-[#f3f3f9]"
-        } h-screens flex flex-col -mt-2`}
+        } h-screens flex flex-col mt-12 min501:mt-12`}
         initial="initial"
         animate="in"
         exit="out"
@@ -471,14 +221,35 @@ allows it to float over other apps, making it easier to copy any saved note.</di
         variants={pageVariants}
       >
         <div
-          className={`flex flex-col mb-2 mx-auto w-5/6 z-0  text-[1rem] min501:text-[1.2rem] mt-12 min501:mt-4  ${
+          className={`flex  flex-col mb-2 mx-auto w-5/6 z-0 text-[1.3rem] -mb-12 min501:text-[1.5rem]  min501:mt-4  ${
             darkMode ? "text-white" : "text-[#405189]"
           }`}
         >
           Mobile Project
         </div>
-        <div className="hidden min501:block">{desktopMode()}</div>
-        <div className="min501:hidden">{mobileMode()}</div>
+        <div className="">{desktopMode()}</div>
+        <div className={`absolute  w-full  ${isPopup ? "" : "hidden"} `}>
+          {isPopup ? (
+            <Popup
+              image={projectImg}
+              name={projectName}
+              desc={projectDesc}
+              platform={projectPlatform}
+              link1={projectLink1}
+              link2={projectLink2}
+              video={false}
+              demo={false}
+              cancel={() => setIsPopup(false)}
+              mobileProject={
+                "h-[11rem] min501:h-[15rem] w-4/6 min501:w-[45%] px-8 "
+              }
+              mobileProjectBg={"min501:w-2/6 "}
+            />
+          ) : (
+            ""
+          )}
+     
+        </div>
       </motion.div>
     </>
   );
