@@ -47,7 +47,7 @@ function Certification() {
       <>
         {console.log("las", showNav)}
         <div
-          className={`flex flex-col w-3/6 z-0 mt-16   ${
+          className={`flex flex-col h-screen w-3/6 z-0   ${
             darkMode ? "text-white" : "text-[#405189]"
           }`}
         >
@@ -174,7 +174,7 @@ function Certification() {
         <>
           {console.log("las", showNav)}
           <div
-            className={`flex flex-col mb-20 w-5/6    ${
+            className={`flex flex-col h-screen w-5/6    ${
               darkMode ? "text-white" : "text-[#405189]"
             }`}
           >
@@ -323,20 +323,20 @@ function Certification() {
       <motion.div
         className={`${
           darkMode ? "bg-[#0d1117] " : "bg-[#f3f3f9]"
-        } h-full flex flex-col `}
+        }  flex flex-col `}
         initial="initial"
         animate="in"
         exit="out"
         transition={{ duration: 0.5, ...transition }}
         variants={pageVariants}
       >
-        {/* <div
-          className={`flex flex-col mb-2 mx-auto w-5/6 z-0 text-[1.2rem] min501:text-[1.7rem] mt-8 min501:mt-4 ${
+     <div
+          className={`flex  flex-col  mx-auto mt-32 min501:mt-20 w-5/6 z-0 text-[1.3rem] min501:text-[1.5rem]  min501:mt-4 ${
             darkMode ? "text-white" : "text-[#405189]"
           }`}
         >
           Certification
-        </div> */}
+        </div>
         <div className="hidden min501:block">{desktopMode()}</div>
         <div className="min501:hidden">{mobileMode()}</div>
       </motion.div>
